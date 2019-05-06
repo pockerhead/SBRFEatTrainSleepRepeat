@@ -1,0 +1,890 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20AD30AD2280BBDA0078E8C6 /* HealthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AD30AC2280BBDA0078E8C6 /* HealthService.m */; };
+		20AD30AF2280BBFD0078E8C6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AD30AE2280BBFD0078E8C6 /* HealthKit.framework */; };
+		20AD30B72280DC6C0078E8C6 /* DietaryFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AD30B62280DC6C0078E8C6 /* DietaryFacade.m */; };
+		20C2CAC9226C7B2B006EFDCC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C2CAC8226C7B2B006EFDCC /* AppDelegate.m */; };
+		20C2CAD2226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20C2CAD0226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld */; };
+		20C2CAD4226C7B2D006EFDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C2CAD3226C7B2D006EFDCC /* Assets.xcassets */; };
+		20C2CAD7226C7B2D006EFDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C2CAD5226C7B2D006EFDCC /* LaunchScreen.storyboard */; };
+		20C2CADA226C7B2D006EFDCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C2CAD9226C7B2D006EFDCC /* main.m */; };
+		20E003792280E87E003E6265 /* WorkoutFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E003782280E87E003E6265 /* WorkoutFacade.swift */; };
+		20F221A8226C7BD7009D6853 /* CoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221A7226C7BD7009D6853 /* CoreDataService.m */; };
+		20F221B3226C7D9D009D6853 /* MealTime+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221AD226C7D9D009D6853 /* MealTime+CoreDataClass.m */; };
+		20F221B4226C7D9D009D6853 /* MealTime+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221AE226C7D9D009D6853 /* MealTime+CoreDataProperties.m */; };
+		20F221B5226C7D9D009D6853 /* Meal+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221B1226C7D9D009D6853 /* Meal+CoreDataClass.m */; };
+		20F221B6226C7D9D009D6853 /* Meal+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221B2226C7D9D009D6853 /* Meal+CoreDataProperties.m */; };
+		20F221D7226C7EE5009D6853 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221CA226C7EE5009D6853 /* TabBarViewController.m */; };
+		20F221D8226C7EE5009D6853 /* TabBarRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221CD226C7EE5009D6853 /* TabBarRouter.m */; };
+		20F221D9226C7EE5009D6853 /* TabBarPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221CF226C7EE5009D6853 /* TabBarPresenter.m */; };
+		20F221DA226C7EE5009D6853 /* TabBarAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221D3226C7EE5009D6853 /* TabBarAssembly.m */; };
+		20F221F7226C8048009D6853 /* MainMenuPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221EA226C8048009D6853 /* MainMenuPresenter.m */; };
+		20F221F8226C8048009D6853 /* MainMenuAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221EE226C8048009D6853 /* MainMenuAssembly.m */; };
+		20F221F9226C8048009D6853 /* MainMenuRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221F2226C8048009D6853 /* MainMenuRouter.m */; };
+		20F221FA226C8048009D6853 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221F6226C8048009D6853 /* MainMenuViewController.m */; };
+		20F22201226C96D4009D6853 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F22200226C96D4009D6853 /* NetworkService.m */; };
+		20F22206226C9E1D009D6853 /* UIView+Constraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F22205226C9E1D009D6853 /* UIView+Constraints.m */; };
+		20F2220A226C9F99009D6853 /* MainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F22209226C9F99009D6853 /* MainMenuCell.m */; };
+		20F2220D226CA06F009D6853 /* MainMenuCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F2220C226CA06F009D6853 /* MainMenuCellViewModel.m */; };
+		AF1E120B67A67FC3596FDC64 /* libPods-EatTrainSleepRepeat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A51F8BC639BBEAA8635F81F /* libPods-EatTrainSleepRepeat.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A51F8BC639BBEAA8635F81F /* libPods-EatTrainSleepRepeat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EatTrainSleepRepeat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20AD30AB2280BBDA0078E8C6 /* HealthService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthService.h; sourceTree = "<group>"; };
+		20AD30AC2280BBDA0078E8C6 /* HealthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthService.m; sourceTree = "<group>"; };
+		20AD30AE2280BBFD0078E8C6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		20AD30B02280BBFD0078E8C6 /* EatTrainSleepRepeat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EatTrainSleepRepeat.entitlements; sourceTree = "<group>"; };
+		20AD30B52280DC6C0078E8C6 /* DietaryFacade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DietaryFacade.h; sourceTree = "<group>"; };
+		20AD30B62280DC6C0078E8C6 /* DietaryFacade.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DietaryFacade.m; sourceTree = "<group>"; };
+		20C2CAC4226C7B2B006EFDCC /* EatTrainSleepRepeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatTrainSleepRepeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20C2CAC7226C7B2B006EFDCC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		20C2CAC8226C7B2B006EFDCC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		20C2CAD1226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EatTrainSleepRepeat.xcdatamodel; sourceTree = "<group>"; };
+		20C2CAD3226C7B2D006EFDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20C2CAD6226C7B2D006EFDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20C2CAD8226C7B2D006EFDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20C2CAD9226C7B2D006EFDCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		20E003782280E87E003E6265 /* WorkoutFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutFacade.swift; sourceTree = "<group>"; };
+		20F221A6226C7BD7009D6853 /* CoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataService.h; sourceTree = "<group>"; };
+		20F221A7226C7BD7009D6853 /* CoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataService.m; sourceTree = "<group>"; };
+		20F221AB226C7D9D009D6853 /* MealTime+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MealTime+CoreDataProperties.h"; sourceTree = "<group>"; };
+		20F221AC226C7D9D009D6853 /* MealTime+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MealTime+CoreDataClass.h"; sourceTree = "<group>"; };
+		20F221AD226C7D9D009D6853 /* MealTime+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MealTime+CoreDataClass.m"; sourceTree = "<group>"; };
+		20F221AE226C7D9D009D6853 /* MealTime+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MealTime+CoreDataProperties.m"; sourceTree = "<group>"; };
+		20F221AF226C7D9D009D6853 /* Meal+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meal+CoreDataProperties.h"; sourceTree = "<group>"; };
+		20F221B0226C7D9D009D6853 /* Meal+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meal+CoreDataClass.h"; sourceTree = "<group>"; };
+		20F221B1226C7D9D009D6853 /* Meal+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Meal+CoreDataClass.m"; sourceTree = "<group>"; };
+		20F221B2226C7D9D009D6853 /* Meal+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Meal+CoreDataProperties.m"; sourceTree = "<group>"; };
+		20F221BD226C7ECC009D6853 /* EatTrainSleepRepeat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EatTrainSleepRepeat-Bridging-Header.h"; sourceTree = "<group>"; };
+		20F221C9226C7EE5009D6853 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		20F221CA226C7EE5009D6853 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		20F221CC226C7EE5009D6853 /* TabBarRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRouter.h; sourceTree = "<group>"; };
+		20F221CD226C7EE5009D6853 /* TabBarRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarRouter.m; sourceTree = "<group>"; };
+		20F221CF226C7EE5009D6853 /* TabBarPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarPresenter.m; sourceTree = "<group>"; };
+		20F221D0226C7EE5009D6853 /* TabBarPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarPresenter.h; sourceTree = "<group>"; };
+		20F221D2226C7EE5009D6853 /* TabBarAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarAssembly.h; sourceTree = "<group>"; };
+		20F221D3226C7EE5009D6853 /* TabBarAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarAssembly.m; sourceTree = "<group>"; };
+		20F221D6226C7EE5009D6853 /* TabBarProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarProtocols.h; sourceTree = "<group>"; };
+		20F221EA226C8048009D6853 /* MainMenuPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuPresenter.m; sourceTree = "<group>"; };
+		20F221EB226C8048009D6853 /* MainMenuPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuPresenter.h; sourceTree = "<group>"; };
+		20F221ED226C8048009D6853 /* MainMenuAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuAssembly.h; sourceTree = "<group>"; };
+		20F221EE226C8048009D6853 /* MainMenuAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuAssembly.m; sourceTree = "<group>"; };
+		20F221F0226C8048009D6853 /* MainMenuProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuProtocols.h; sourceTree = "<group>"; };
+		20F221F2226C8048009D6853 /* MainMenuRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuRouter.m; sourceTree = "<group>"; };
+		20F221F3226C8048009D6853 /* MainMenuRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuRouter.h; sourceTree = "<group>"; };
+		20F221F5226C8048009D6853 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		20F221F6226C8048009D6853 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		20F221FF226C96D4009D6853 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		20F22200226C96D4009D6853 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
+		20F22204226C9E1D009D6853 /* UIView+Constraints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraints.h"; sourceTree = "<group>"; };
+		20F22205226C9E1D009D6853 /* UIView+Constraints.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraints.m"; sourceTree = "<group>"; };
+		20F22208226C9F99009D6853 /* MainMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuCell.h; sourceTree = "<group>"; };
+		20F22209226C9F99009D6853 /* MainMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuCell.m; sourceTree = "<group>"; };
+		20F2220B226CA06F009D6853 /* MainMenuCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuCellViewModel.h; sourceTree = "<group>"; };
+		20F2220C226CA06F009D6853 /* MainMenuCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuCellViewModel.m; sourceTree = "<group>"; };
+		748A33E9BB2CCD81F1E45673 /* Pods-EatTrainSleepRepeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTrainSleepRepeat.release.xcconfig"; path = "Target Support Files/Pods-EatTrainSleepRepeat/Pods-EatTrainSleepRepeat.release.xcconfig"; sourceTree = "<group>"; };
+		F012CCE96EE98F9E49DDB60F /* Pods-EatTrainSleepRepeat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTrainSleepRepeat.debug.xcconfig"; path = "Target Support Files/Pods-EatTrainSleepRepeat/Pods-EatTrainSleepRepeat.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20C2CAC1226C7B2B006EFDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1E120B67A67FC3596FDC64 /* libPods-EatTrainSleepRepeat.a in Frameworks */,
+				20AD30AF2280BBFD0078E8C6 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20AD30AA2280BBC70078E8C6 /* HealthService */ = {
+			isa = PBXGroup;
+			children = (
+				20AD30AB2280BBDA0078E8C6 /* HealthService.h */,
+				20AD30AC2280BBDA0078E8C6 /* HealthService.m */,
+			);
+			path = HealthService;
+			sourceTree = "<group>";
+		};
+		20AD30B12280DBFD0078E8C6 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				20AD30B42280DC260078E8C6 /* Sleep */,
+				20AD30B32280DC200078E8C6 /* Workout */,
+				20AD30B22280DC080078E8C6 /* Dietary */,
+				20AD30AA2280BBC70078E8C6 /* HealthService */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		20AD30B22280DC080078E8C6 /* Dietary */ = {
+			isa = PBXGroup;
+			children = (
+				20AD30B52280DC6C0078E8C6 /* DietaryFacade.h */,
+				20AD30B62280DC6C0078E8C6 /* DietaryFacade.m */,
+			);
+			path = Dietary;
+			sourceTree = "<group>";
+		};
+		20AD30B32280DC200078E8C6 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				20E003782280E87E003E6265 /* WorkoutFacade.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		20AD30B42280DC260078E8C6 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		20C2CABB226C7B2B006EFDCC = {
+			isa = PBXGroup;
+			children = (
+				20C2CAC6226C7B2B006EFDCC /* EatTrainSleepRepeat */,
+				20C2CAC5226C7B2B006EFDCC /* Products */,
+				EFF0C1574298C1E8E753A3F8 /* Pods */,
+				5A2DE1D9177B6188202E8BB9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		20C2CAC5226C7B2B006EFDCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20C2CAC4226C7B2B006EFDCC /* EatTrainSleepRepeat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20C2CAC6226C7B2B006EFDCC /* EatTrainSleepRepeat */ = {
+			isa = PBXGroup;
+			children = (
+				20AD30B02280BBFD0078E8C6 /* EatTrainSleepRepeat.entitlements */,
+				20F221A2226C7B9E009D6853 /* Models */,
+				20F2219E226C7B71009D6853 /* Services */,
+				20F2219D226C7B6A009D6853 /* Common */,
+				20F2219C226C7B64009D6853 /* Modules */,
+				20F2219B226C7B5B009D6853 /* Application */,
+				20C2CAD3226C7B2D006EFDCC /* Assets.xcassets */,
+				20C2CAD5226C7B2D006EFDCC /* LaunchScreen.storyboard */,
+				20C2CAD8226C7B2D006EFDCC /* Info.plist */,
+				20C2CAD9226C7B2D006EFDCC /* main.m */,
+				20C2CAD0226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld */,
+			);
+			path = EatTrainSleepRepeat;
+			sourceTree = "<group>";
+		};
+		20F2219B226C7B5B009D6853 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				20C2CAC7226C7B2B006EFDCC /* AppDelegate.h */,
+				20C2CAC8226C7B2B006EFDCC /* AppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		20F2219C226C7B64009D6853 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				20F221DE226C8017009D6853 /* MainMenu */,
+				20F221DD226C8009009D6853 /* SleepModule */,
+				20F221DC226C7FF0009D6853 /* TrainModule */,
+				20F221DB226C7FE4009D6853 /* EatModule */,
+				20F221BB226C7EB3009D6853 /* Navigation */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		20F2219D226C7B6A009D6853 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				20F22202226C9DE2009D6853 /* Categories */,
+				20F2219F226C7B7C009D6853 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		20F2219E226C7B71009D6853 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				20F221FB226C9692009D6853 /* Core */,
+				20F221A4226C7BA9009D6853 /* Network */,
+				20F221A3226C7BA3009D6853 /* Internal */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		20F2219F226C7B7C009D6853 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20F221A1226C7B88009D6853 /* CollectionViewCells */,
+				20F221A0226C7B81009D6853 /* TableViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		20F221A0226C7B81009D6853 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				20F22207226C9F85009D6853 /* MainMenuCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		20F221A1226C7B88009D6853 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		20F221A2226C7B9E009D6853 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20F221B9226C7DBC009D6853 /* CoreData */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		20F221A3226C7BA3009D6853 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				20AD30B12280DBFD0078E8C6 /* HealthKit */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		20F221A4226C7BA9009D6853 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		20F221A9226C7BDC009D6853 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				20F221A6226C7BD7009D6853 /* CoreDataService.h */,
+				20F221A7226C7BD7009D6853 /* CoreDataService.m */,
+			);
+			path = CoreDataService;
+			sourceTree = "<group>";
+		};
+		20F221AA226C7D8A009D6853 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				20F221B8226C7DB3009D6853 /* Meal */,
+				20F221B7226C7DA4009D6853 /* MealTime */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		20F221B7226C7DA4009D6853 /* MealTime */ = {
+			isa = PBXGroup;
+			children = (
+				20F221AB226C7D9D009D6853 /* MealTime+CoreDataProperties.h */,
+				20F221AC226C7D9D009D6853 /* MealTime+CoreDataClass.h */,
+				20F221AD226C7D9D009D6853 /* MealTime+CoreDataClass.m */,
+				20F221AE226C7D9D009D6853 /* MealTime+CoreDataProperties.m */,
+			);
+			path = MealTime;
+			sourceTree = "<group>";
+		};
+		20F221B8226C7DB3009D6853 /* Meal */ = {
+			isa = PBXGroup;
+			children = (
+				20F221AF226C7D9D009D6853 /* Meal+CoreDataProperties.h */,
+				20F221B0226C7D9D009D6853 /* Meal+CoreDataClass.h */,
+				20F221B1226C7D9D009D6853 /* Meal+CoreDataClass.m */,
+				20F221B2226C7D9D009D6853 /* Meal+CoreDataProperties.m */,
+			);
+			path = Meal;
+			sourceTree = "<group>";
+		};
+		20F221B9226C7DBC009D6853 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				20F221BA226C7DC9009D6853 /* CoreDataDTO's */,
+				20F221AA226C7D8A009D6853 /* CoreDataModels */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		20F221BA226C7DC9009D6853 /* CoreDataDTO's */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "CoreDataDTO's";
+			sourceTree = "<group>";
+		};
+		20F221BB226C7EB3009D6853 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				20F221BC226C7EB8009D6853 /* TabBar */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		20F221BC226C7EB8009D6853 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				20F221D1226C7EE5009D6853 /* Assembly */,
+				20F221CE226C7EE5009D6853 /* Presenter */,
+				20F221D5226C7EE5009D6853 /* Protocols */,
+				20F221CB226C7EE5009D6853 /* Router */,
+				20F221C8226C7EE5009D6853 /* View */,
+				20F221BD226C7ECC009D6853 /* EatTrainSleepRepeat-Bridging-Header.h */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		20F221C8226C7EE5009D6853 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20F221C9226C7EE5009D6853 /* TabBarViewController.h */,
+				20F221CA226C7EE5009D6853 /* TabBarViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20F221CB226C7EE5009D6853 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20F221CC226C7EE5009D6853 /* TabBarRouter.h */,
+				20F221CD226C7EE5009D6853 /* TabBarRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		20F221CE226C7EE5009D6853 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20F221CF226C7EE5009D6853 /* TabBarPresenter.m */,
+				20F221D0226C7EE5009D6853 /* TabBarPresenter.h */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		20F221D1226C7EE5009D6853 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20F221D2226C7EE5009D6853 /* TabBarAssembly.h */,
+				20F221D3226C7EE5009D6853 /* TabBarAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		20F221D5226C7EE5009D6853 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20F221D6226C7EE5009D6853 /* TabBarProtocols.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		20F221DB226C7FE4009D6853 /* EatModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EatModule;
+			sourceTree = "<group>";
+		};
+		20F221DC226C7FF0009D6853 /* TrainModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TrainModule;
+			sourceTree = "<group>";
+		};
+		20F221DD226C8009009D6853 /* SleepModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SleepModule;
+			sourceTree = "<group>";
+		};
+		20F221DE226C8017009D6853 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				20F221EC226C8048009D6853 /* Assembly */,
+				20F221E9226C8048009D6853 /* Presenter */,
+				20F221EF226C8048009D6853 /* Protocols */,
+				20F221F1226C8048009D6853 /* Router */,
+				20F221F4226C8048009D6853 /* View */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		20F221E9226C8048009D6853 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20F221EA226C8048009D6853 /* MainMenuPresenter.m */,
+				20F221EB226C8048009D6853 /* MainMenuPresenter.h */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		20F221EC226C8048009D6853 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20F221ED226C8048009D6853 /* MainMenuAssembly.h */,
+				20F221EE226C8048009D6853 /* MainMenuAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		20F221EF226C8048009D6853 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20F221F0226C8048009D6853 /* MainMenuProtocols.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		20F221F1226C8048009D6853 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20F221F2226C8048009D6853 /* MainMenuRouter.m */,
+				20F221F3226C8048009D6853 /* MainMenuRouter.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		20F221F4226C8048009D6853 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20F221F5226C8048009D6853 /* MainMenuViewController.h */,
+				20F221F6226C8048009D6853 /* MainMenuViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20F221FB226C9692009D6853 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				20F221FD226C96A5009D6853 /* Network */,
+				20F221FC226C969E009D6853 /* Internal */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		20F221FC226C969E009D6853 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				20F221A9226C7BDC009D6853 /* CoreDataService */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		20F221FD226C96A5009D6853 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				20F221FE226C96B4009D6853 /* NetworkService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		20F221FE226C96B4009D6853 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				20F221FF226C96D4009D6853 /* NetworkService.h */,
+				20F22200226C96D4009D6853 /* NetworkService.m */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		20F22202226C9DE2009D6853 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				20F22203226C9DE9009D6853 /* UIView + Constraints */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		20F22203226C9DE9009D6853 /* UIView + Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				20F22204226C9E1D009D6853 /* UIView+Constraints.h */,
+				20F22205226C9E1D009D6853 /* UIView+Constraints.m */,
+			);
+			path = "UIView + Constraints";
+			sourceTree = "<group>";
+		};
+		20F22207226C9F85009D6853 /* MainMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				20F22208226C9F99009D6853 /* MainMenuCell.h */,
+				20F22209226C9F99009D6853 /* MainMenuCell.m */,
+				20F2220B226CA06F009D6853 /* MainMenuCellViewModel.h */,
+				20F2220C226CA06F009D6853 /* MainMenuCellViewModel.m */,
+			);
+			path = MainMenuCell;
+			sourceTree = "<group>";
+		};
+		5A2DE1D9177B6188202E8BB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20AD30AE2280BBFD0078E8C6 /* HealthKit.framework */,
+				0A51F8BC639BBEAA8635F81F /* libPods-EatTrainSleepRepeat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFF0C1574298C1E8E753A3F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F012CCE96EE98F9E49DDB60F /* Pods-EatTrainSleepRepeat.debug.xcconfig */,
+				748A33E9BB2CCD81F1E45673 /* Pods-EatTrainSleepRepeat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20C2CAC3226C7B2B006EFDCC /* EatTrainSleepRepeat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20C2CADD226C7B2D006EFDCC /* Build configuration list for PBXNativeTarget "EatTrainSleepRepeat" */;
+			buildPhases = (
+				B5C2B0C097DD1C2DC9D4873A /* [CP] Check Pods Manifest.lock */,
+				20C2CAC0226C7B2B006EFDCC /* Sources */,
+				20C2CAC1226C7B2B006EFDCC /* Frameworks */,
+				20C2CAC2226C7B2B006EFDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EatTrainSleepRepeat;
+			productName = EatTrainSleepRepeat;
+			productReference = 20C2CAC4226C7B2B006EFDCC /* EatTrainSleepRepeat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20C2CABC226C7B2B006EFDCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = pockerhead;
+				TargetAttributes = {
+					20C2CAC3226C7B2B006EFDCC = {
+						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 20C2CABF226C7B2B006EFDCC /* Build configuration list for PBXProject "EatTrainSleepRepeat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20C2CABB226C7B2B006EFDCC;
+			productRefGroup = 20C2CAC5226C7B2B006EFDCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20C2CAC3226C7B2B006EFDCC /* EatTrainSleepRepeat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20C2CAC2226C7B2B006EFDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20C2CAD7226C7B2D006EFDCC /* LaunchScreen.storyboard in Resources */,
+				20C2CAD4226C7B2D006EFDCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5C2B0C097DD1C2DC9D4873A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EatTrainSleepRepeat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20C2CAC0226C7B2B006EFDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20F221B3226C7D9D009D6853 /* MealTime+CoreDataClass.m in Sources */,
+				20F221A8226C7BD7009D6853 /* CoreDataService.m in Sources */,
+				20F22206226C9E1D009D6853 /* UIView+Constraints.m in Sources */,
+				20C2CAD2226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld in Sources */,
+				20F221B5226C7D9D009D6853 /* Meal+CoreDataClass.m in Sources */,
+				20F22201226C96D4009D6853 /* NetworkService.m in Sources */,
+				20C2CADA226C7B2D006EFDCC /* main.m in Sources */,
+				20F221D9226C7EE5009D6853 /* TabBarPresenter.m in Sources */,
+				20C2CAC9226C7B2B006EFDCC /* AppDelegate.m in Sources */,
+				20F221F9226C8048009D6853 /* MainMenuRouter.m in Sources */,
+				20F221D8226C7EE5009D6853 /* TabBarRouter.m in Sources */,
+				20F221B6226C7D9D009D6853 /* Meal+CoreDataProperties.m in Sources */,
+				20AD30B72280DC6C0078E8C6 /* DietaryFacade.m in Sources */,
+				20F2220D226CA06F009D6853 /* MainMenuCellViewModel.m in Sources */,
+				20E003792280E87E003E6265 /* WorkoutFacade.swift in Sources */,
+				20F2220A226C9F99009D6853 /* MainMenuCell.m in Sources */,
+				20F221D7226C7EE5009D6853 /* TabBarViewController.m in Sources */,
+				20F221F7226C8048009D6853 /* MainMenuPresenter.m in Sources */,
+				20F221FA226C8048009D6853 /* MainMenuViewController.m in Sources */,
+				20F221B4226C7D9D009D6853 /* MealTime+CoreDataProperties.m in Sources */,
+				20AD30AD2280BBDA0078E8C6 /* HealthService.m in Sources */,
+				20F221DA226C7EE5009D6853 /* TabBarAssembly.m in Sources */,
+				20F221F8226C8048009D6853 /* MainMenuAssembly.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20C2CAD5226C7B2D006EFDCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20C2CAD6226C7B2D006EFDCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20C2CADB226C7B2D006EFDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		20C2CADC226C7B2D006EFDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20C2CADE226C7B2D006EFDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F012CCE96EE98F9E49DDB60F /* Pods-EatTrainSleepRepeat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = EatTrainSleepRepeat/EatTrainSleepRepeat.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54X9L274YP;
+				INFOPLIST_FILE = EatTrainSleepRepeat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pockerhead.EatTrainSleepRepeat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EatTrainSleepRepeat/Modules/Navigation/TabBar/EatTrainSleepRepeat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20C2CADF226C7B2D006EFDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 748A33E9BB2CCD81F1E45673 /* Pods-EatTrainSleepRepeat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = EatTrainSleepRepeat/EatTrainSleepRepeat.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54X9L274YP;
+				INFOPLIST_FILE = EatTrainSleepRepeat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pockerhead.EatTrainSleepRepeat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EatTrainSleepRepeat/Modules/Navigation/TabBar/EatTrainSleepRepeat-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20C2CABF226C7B2B006EFDCC /* Build configuration list for PBXProject "EatTrainSleepRepeat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20C2CADB226C7B2D006EFDCC /* Debug */,
+				20C2CADC226C7B2D006EFDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20C2CADD226C7B2D006EFDCC /* Build configuration list for PBXNativeTarget "EatTrainSleepRepeat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20C2CADE226C7B2D006EFDCC /* Debug */,
+				20C2CADF226C7B2D006EFDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		20C2CAD0226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				20C2CAD1226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodel */,
+			);
+			currentVersion = 20C2CAD1226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodel */;
+			path = EatTrainSleepRepeat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 20C2CABC226C7B2B006EFDCC /* Project object */;
+}
