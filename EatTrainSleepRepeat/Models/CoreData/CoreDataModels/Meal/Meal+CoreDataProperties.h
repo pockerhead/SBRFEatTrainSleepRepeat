@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic) float kkal;
+@property (nonatomic) float weight;
 @property (nonatomic) float protein;
 @property (nonatomic) float carbonhydrate;
 @property (nonatomic) float fat;

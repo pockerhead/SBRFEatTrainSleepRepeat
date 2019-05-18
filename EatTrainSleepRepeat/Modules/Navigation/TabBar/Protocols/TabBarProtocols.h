@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TabBarView <NSObject>
 
+- (void)configureInitialVCs:(BOOL)auth;
+
 @end
 
 @protocol TabBarPresenterInterface <NSObject>

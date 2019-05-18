@@ -31,6 +31,8 @@
                                            [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDietaryFatTotal],
                                            [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDietaryCarbohydrates],
                                            [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierDietaryEnergyConsumed],
+                                           [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierBasalEnergyBurned],
+                                           [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierActiveEnergyBurned],
                                            nil];
         [self.store requestAuthorizationToShareTypes:allTypes readTypes:allTypes completion:^(BOOL success, NSError * _Nullable error) {
             if (error)
@@ -65,8 +67,6 @@
     return self;
 }
 
-// MARK: - БЖУ
-
 - (void)getDailyValueForQuantityType:(HKQuantityTypeIdentifier)type completion:(void(^)(NSNumber * _Nullable value, NSError * _Nullable error))completion
 {
     NSDate *startDate = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate new]];
@@ -76,35 +76,29 @@
                                                                endDate:endDate
                                                                options:HKQueryOptionStrictStartDate];
     __block float dailyValue = 0;
-    HKSampleQuery *query = [[HKSampleQuery alloc] initWithSampleType: sample
-                                                           predicate: predicate
-                                                               limit: 0
-                                                     sortDescriptors: nil
-                                                      resultsHandler:^(HKSampleQuery *query, NSArray* results, NSError *error){
-                                                          
-                                                          dispatch_async(dispatch_get_main_queue(), ^{
-                                                              if (error)
-                                                              {
-                                                                  NSLog(@"%@", error.localizedDescription);
-                                                                  completion(nil, error);
-                                                              }
-                                                              else
-                                                              {
-                                                                  if ([self unitForType:type] == nil)
-                                                                  {
-                                                                      completion(nil, [NSError errorWithDomain:HKErrorDomain code:-300 userInfo:nil]);
-                                                                      return;
-                                                                  }
-                                                                  for(HKQuantitySample *samples in results)
-                                                                  {
-                                                                      dailyValue += [[samples quantity] doubleValueForUnit:[self unitForType:type]];
-                                                                  }
-                                                                  
-                                                                  completion(@(dailyValue), nil);
-                                                              }
-                                                          });
-                                                      }
-                            ];
+    HKSampleQuery *query = [[HKSampleQuery alloc] initWithSampleType:sample predicate:predicate limit:0 sortDescriptors:nil resultsHandler:^(HKSampleQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable results, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error)
+            {
+                NSLog(@"%@", error.localizedDescription);
+                completion(nil, error);
+            }
+            else
+            {
+                if ([self unitForType:type] == nil)
+                {
+                    completion(nil, [NSError errorWithDomain:HKErrorDomain code:-300 userInfo:nil]);
+                    return;
+                }
+                for(HKQuantitySample *samples in results)
+                {
+                    dailyValue += [[samples quantity] doubleValueForUnit:[self unitForType:type]];
+                }
+                
+                completion(@(dailyValue), nil);
+            }
+        });
+    }];
     [self.store executeQuery:query];
 }
 
@@ -114,7 +108,7 @@
     {
         return [HKUnit countUnit];
     }
-    else if (type == HKQuantityTypeIdentifierDietaryEnergyConsumed)
+    else if (type == HKQuantityTypeIdentifierDietaryEnergyConsumed || type == HKQuantityTypeIdentifierBasalEnergyBurned || type == HKQuantityTypeIdentifierActiveEnergyBurned)
     {
         return [HKUnit kilocalorieUnit];
     }

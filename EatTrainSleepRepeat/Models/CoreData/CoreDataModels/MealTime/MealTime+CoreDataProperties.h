@@ -1,14 +1,13 @@
 //
 //  MealTime+CoreDataProperties.h
-//  EatTrainSleepRepeat
+//  
 //
-//  Created by pockerhead on 21/04/2019.
-//  Copyright © 2019 pockerhead. All rights reserved.
+//  Created by pockerhead on 07/05/2019.
 //
 //
 
 #import "MealTime+CoreDataClass.h"
-
+#import "Meal+CoreDataProperties.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<MealTime *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *mealDescription;
-@property (nullable, nonatomic, retain) NSObject *meals;
+@property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, retain) Meal *meals;
 
 @end
 

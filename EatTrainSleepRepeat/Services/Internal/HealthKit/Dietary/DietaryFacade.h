@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DietaryFacade : NSObject
 
-- (void)requestValuesWithCompletion:(void(^)(void))completion;
+- (void)updateValuesWithCompletion:(void(^)(void))completion;
 
 // MARK: - Calories
 @property (strong, nonatomic) NSNumber *caloriesValue;

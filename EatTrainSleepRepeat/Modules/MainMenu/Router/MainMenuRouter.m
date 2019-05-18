@@ -10,12 +10,20 @@
 
 #import "MainMenuRouter.h"
 #import "MainMenuProtocols.h"
+#import "VKAuthScreenAssembly.h"
 
 @implementation MainMenuRouter
 
 - (void)navigateToDismiss { 
     [self.viewController dismissViewControllerAnimated:true completion:nil];
 }
+
+- (void)navigateToAuth {
+    UIViewController *authScreen = [VKAuthScreenAssembly createModule];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:authScreen];
+    [self navigateTo:nav];
+}
+
 
 - (void)navigateTo:(UIViewController *)vc {
     if([vc isKindOfClass:[UINavigationController class]]){

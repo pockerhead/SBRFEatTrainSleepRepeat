@@ -15,7 +15,7 @@
 @interface MainMenuViewController () <MainMenuView, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray <MainMenuCellViewModel *>*dataSource;
+@property (nonatomic, strong) NSArray <MainMenuDataMediator *>*dataSource;
 
 @end
 
@@ -35,6 +35,8 @@
 }
 
 - (void)configureUI {
+    self.navigationItem.title = @"Сегодня";
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self configureTableView];
 }
 
@@ -44,35 +46,59 @@
     [self.view addSubview:self.tableView];
     [self.tableView fillSuperview];
     self.tableView.delegate = self;
+    self.tableView.delaysContentTouches = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
     self.tableView.dataSource = self;
     [self.tableView registerClass:[MainMenuCell class] forCellReuseIdentifier:NSStringFromClass([MainMenuCell class])];
+    [self.tableView registerClass:[MainMenuHeader class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([MainMenuHeader class])];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MainMenuCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MainMenuCell class])];
-    if (indexPath.row < self.dataSource.count)
+    if (indexPath.section < self.dataSource.count && indexPath.row < self.dataSource[indexPath.section].rows.count)
     {
-        MainMenuCellViewModel *viewModel = self.dataSource[indexPath.row];
+        MainMenuCellViewModel *viewModel = self.dataSource[indexPath.section].rows[indexPath.row];
         [cell configureWithViewModel:viewModel];
     }
     return cell;
 }
 
-- (void)setDataSource:(NSArray<MainMenuCellViewModel *> *)dataSource
+- (void)setDataSource:(NSArray<MainMenuDataMediator *> *)dataSource
 {
     _dataSource = dataSource;
-    [self.tableView performBatchUpdates:^{
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    } completion:nil];
+//    [self.tableView performBatchUpdates:^{
+//        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self->_dataSource.count)];
+//        [self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
+//    } completion:nil];
+    [self.tableView reloadData];
 }
 
-- (void)displayMenuViewModels:(NSArray<MainMenuCellViewModel *> *)viewModels
+- (void)displayMenu:(NSArray<MainMenuDataMediator *> *)viewModels
 {
     self.dataSource = viewModels;
 }
 
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section < self.dataSource.count) {
+        MainMenuHeaderViewModel *viewModel = self.dataSource[section].sectionHeader;
+        MainMenuHeader *header = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([MainMenuHeader class])];
+        [header configureWithViewModel:viewModel];
+        return header;
+    }
+    return [UIView new];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return UITableViewAutomaticDimension;
 }
@@ -93,7 +119,21 @@
     {
         return 0;
     }
+    return self.dataSource[section].rows.count;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if (self.dataSource == nil)
+    {
+        return 0;
+    }
     return self.dataSource.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.presenter didSelectRowAt:indexPath];
 }
 
 @end

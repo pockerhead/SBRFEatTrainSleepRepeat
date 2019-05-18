@@ -10,6 +10,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MainMenuCell.h"
+#import "MainMenuHeader.h"
+#import "MainMenuDataMediator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,12 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 //example
 @required - (void)navigateToDismiss;
+- (void)navigateToAuth;
 
 @end
 
 @protocol MainMenuView <NSObject>
 
-- (void)displayMenuViewModels:(NSArray <MainMenuCellViewModel *>*)viewModels;
+- (void)displayMenu:(NSArray <MainMenuDataMediator *>*)viewModels;
 
 @end
 
@@ -35,7 +38,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)viewWillDissappear;
 - (void)viewDidDissappear;
 
+- (void)didSelectRowAt:(NSIndexPath *)indexPath;
+
 @end
+
 
 
 NS_ASSUME_NONNULL_END

@@ -7,14 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2090009D2284794D00394CFE /* MainMenuDataMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2090009C2284794D00394CFE /* MainMenuDataMediator.m */; };
+		209000A022847FD300394CFE /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090009F22847FD300394CFE /* AppTheme.swift */; };
+		209000A3228480E200394CFE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209000A2228480E200394CFE /* UIColor.swift */; };
 		20AD30AD2280BBDA0078E8C6 /* HealthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AD30AC2280BBDA0078E8C6 /* HealthService.m */; };
 		20AD30AF2280BBFD0078E8C6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AD30AE2280BBFD0078E8C6 /* HealthKit.framework */; };
 		20AD30B72280DC6C0078E8C6 /* DietaryFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AD30B62280DC6C0078E8C6 /* DietaryFacade.m */; };
+		20B2063A229049370038875A /* VKAuthScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2062D229049370038875A /* VKAuthScreenPresenter.m */; };
+		20B2063B229049370038875A /* VKAuthScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B20630229049370038875A /* VKAuthScreenViewController.m */; };
+		20B2063C229049370038875A /* VKAuthScreenAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B20634229049370038875A /* VKAuthScreenAssembly.m */; };
+		20B2063D229049370038875A /* VKAuthScreenRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B20638229049370038875A /* VKAuthScreenRouter.m */; };
+		20B2064422904CEA0038875A /* KeychainService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2064322904CEA0038875A /* KeychainService.m */; };
+		20B2064C22905DEB0038875A /* UIViewController+Alertable.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2064B22905DEB0038875A /* UIViewController+Alertable.m */; };
+		20B20666229073C30038875A /* ProfilePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2065A229073C20038875A /* ProfilePresenter.m */; };
+		20B20667229073C30038875A /* ProfileRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2065D229073C20038875A /* ProfileRouter.m */; };
+		20B20668229073C30038875A /* ProfileAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B20662229073C30038875A /* ProfileAssembly.m */; };
+		20B20669229073C30038875A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B20665229073C30038875A /* ProfileViewController.m */; };
+		20B2066E22908A7A0038875A /* LocalNotificationsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2066D22908A7A0038875A /* LocalNotificationsService.m */; };
+		20B2F0D92281BD1A004B3209 /* MealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F0D82281BD1A004B3209 /* MealCell.m */; };
+		20B2F0DC2281BD26004B3209 /* MealCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F0DB2281BD26004B3209 /* MealCellViewModel.m */; };
+		20B2F0E12281C7FD004B3209 /* MealTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F0E02281C7FD004B3209 /* MealTableViewHeader.m */; };
+		20B2F0E42281C825004B3209 /* MealTimeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F0E32281C825004B3209 /* MealTimeViewModel.m */; };
+		20B2F0E822845D50004B3209 /* MainMenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F0E722845D50004B3209 /* MainMenuHeader.m */; };
+		20B2F0EB22845D61004B3209 /* MainMenuHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B2F0EA22845D61004B3209 /* MainMenuHeaderViewModel.m */; };
 		20C2CAC9226C7B2B006EFDCC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C2CAC8226C7B2B006EFDCC /* AppDelegate.m */; };
 		20C2CAD2226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20C2CAD0226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld */; };
 		20C2CAD4226C7B2D006EFDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20C2CAD3226C7B2D006EFDCC /* Assets.xcassets */; };
 		20C2CAD7226C7B2D006EFDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C2CAD5226C7B2D006EFDCC /* LaunchScreen.storyboard */; };
 		20C2CADA226C7B2D006EFDCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C2CAD9226C7B2D006EFDCC /* main.m */; };
+		20D0191322903FF80033F42E /* MealTimeAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0190722903FF80033F42E /* MealTimeAssembly.m */; };
+		20D0191422903FF80033F42E /* MealTimePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0190922903FF80033F42E /* MealTimePresenter.m */; };
+		20D0191522903FF80033F42E /* MealTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0190D22903FF80033F42E /* MealTimeViewController.m */; };
+		20D0191622903FF80033F42E /* MealTimeRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0191122903FF80033F42E /* MealTimeRouter.m */; };
 		20E003792280E87E003E6265 /* WorkoutFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E003782280E87E003E6265 /* WorkoutFacade.swift */; };
 		20F221A8226C7BD7009D6853 /* CoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221A7226C7BD7009D6853 /* CoreDataService.m */; };
 		20F221B3226C7D9D009D6853 /* MealTime+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221AD226C7D9D009D6853 /* MealTime+CoreDataClass.m */; };
@@ -38,12 +62,53 @@
 
 /* Begin PBXFileReference section */
 		0A51F8BC639BBEAA8635F81F /* libPods-EatTrainSleepRepeat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EatTrainSleepRepeat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2090009B2284794D00394CFE /* MainMenuDataMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuDataMediator.h; sourceTree = "<group>"; };
+		2090009C2284794D00394CFE /* MainMenuDataMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuDataMediator.m; sourceTree = "<group>"; };
+		2090009F22847FD300394CFE /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		209000A2228480E200394CFE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		20AD30AB2280BBDA0078E8C6 /* HealthService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthService.h; sourceTree = "<group>"; };
 		20AD30AC2280BBDA0078E8C6 /* HealthService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthService.m; sourceTree = "<group>"; };
 		20AD30AE2280BBFD0078E8C6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		20AD30B02280BBFD0078E8C6 /* EatTrainSleepRepeat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EatTrainSleepRepeat.entitlements; sourceTree = "<group>"; };
 		20AD30B52280DC6C0078E8C6 /* DietaryFacade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DietaryFacade.h; sourceTree = "<group>"; };
 		20AD30B62280DC6C0078E8C6 /* DietaryFacade.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DietaryFacade.m; sourceTree = "<group>"; };
+		20B2062D229049370038875A /* VKAuthScreenPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAuthScreenPresenter.m; sourceTree = "<group>"; };
+		20B2062E229049370038875A /* VKAuthScreenPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAuthScreenPresenter.h; sourceTree = "<group>"; };
+		20B20630229049370038875A /* VKAuthScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAuthScreenViewController.m; sourceTree = "<group>"; };
+		20B20631229049370038875A /* VKAuthScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAuthScreenViewController.h; sourceTree = "<group>"; };
+		20B20633229049370038875A /* VKAuthScreenAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAuthScreenAssembly.h; sourceTree = "<group>"; };
+		20B20634229049370038875A /* VKAuthScreenAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAuthScreenAssembly.m; sourceTree = "<group>"; };
+		20B20636229049370038875A /* VKAuthScreenProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAuthScreenProtocols.h; sourceTree = "<group>"; };
+		20B20638229049370038875A /* VKAuthScreenRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAuthScreenRouter.m; sourceTree = "<group>"; };
+		20B20639229049370038875A /* VKAuthScreenRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAuthScreenRouter.h; sourceTree = "<group>"; };
+		20B2064222904CEA0038875A /* KeychainService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainService.h; sourceTree = "<group>"; };
+		20B2064322904CEA0038875A /* KeychainService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeychainService.m; sourceTree = "<group>"; };
+		20B2064622905D900038875A /* Alertable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alertable.h; sourceTree = "<group>"; };
+		20B2064A22905DEB0038875A /* UIViewController+Alertable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alertable.h"; sourceTree = "<group>"; };
+		20B2064B22905DEB0038875A /* UIViewController+Alertable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alertable.m"; sourceTree = "<group>"; };
+		20B20659229073C20038875A /* ProfilePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePresenter.h; sourceTree = "<group>"; };
+		20B2065A229073C20038875A /* ProfilePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePresenter.m; sourceTree = "<group>"; };
+		20B2065C229073C20038875A /* ProfileRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileRouter.h; sourceTree = "<group>"; };
+		20B2065D229073C20038875A /* ProfileRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileRouter.m; sourceTree = "<group>"; };
+		20B2065F229073C30038875A /* ProfileProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileProtocols.h; sourceTree = "<group>"; };
+		20B20661229073C30038875A /* ProfileAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileAssembly.h; sourceTree = "<group>"; };
+		20B20662229073C30038875A /* ProfileAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileAssembly.m; sourceTree = "<group>"; };
+		20B20664229073C30038875A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		20B20665229073C30038875A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		20B2066C22908A7A0038875A /* LocalNotificationsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationsService.h; sourceTree = "<group>"; };
+		20B2066D22908A7A0038875A /* LocalNotificationsService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationsService.m; sourceTree = "<group>"; };
+		20B2F0D72281BD1A004B3209 /* MealCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealCell.h; sourceTree = "<group>"; };
+		20B2F0D82281BD1A004B3209 /* MealCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealCell.m; sourceTree = "<group>"; };
+		20B2F0DA2281BD26004B3209 /* MealCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealCellViewModel.h; sourceTree = "<group>"; };
+		20B2F0DB2281BD26004B3209 /* MealCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealCellViewModel.m; sourceTree = "<group>"; };
+		20B2F0DF2281C7FD004B3209 /* MealTableViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealTableViewHeader.h; sourceTree = "<group>"; };
+		20B2F0E02281C7FD004B3209 /* MealTableViewHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealTableViewHeader.m; sourceTree = "<group>"; };
+		20B2F0E22281C825004B3209 /* MealTimeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealTimeViewModel.h; sourceTree = "<group>"; };
+		20B2F0E32281C825004B3209 /* MealTimeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealTimeViewModel.m; sourceTree = "<group>"; };
+		20B2F0E622845D50004B3209 /* MainMenuHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuHeader.h; sourceTree = "<group>"; };
+		20B2F0E722845D50004B3209 /* MainMenuHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuHeader.m; sourceTree = "<group>"; };
+		20B2F0E922845D61004B3209 /* MainMenuHeaderViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuHeaderViewModel.h; sourceTree = "<group>"; };
+		20B2F0EA22845D61004B3209 /* MainMenuHeaderViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuHeaderViewModel.m; sourceTree = "<group>"; };
 		20C2CAC4226C7B2B006EFDCC /* EatTrainSleepRepeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatTrainSleepRepeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C2CAC7226C7B2B006EFDCC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		20C2CAC8226C7B2B006EFDCC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,6 +117,15 @@
 		20C2CAD6226C7B2D006EFDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20C2CAD8226C7B2D006EFDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20C2CAD9226C7B2D006EFDCC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		20D0190622903FF80033F42E /* MealTimeAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTimeAssembly.h; sourceTree = "<group>"; };
+		20D0190722903FF80033F42E /* MealTimeAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealTimeAssembly.m; sourceTree = "<group>"; };
+		20D0190922903FF80033F42E /* MealTimePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealTimePresenter.m; sourceTree = "<group>"; };
+		20D0190A22903FF80033F42E /* MealTimePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTimePresenter.h; sourceTree = "<group>"; };
+		20D0190C22903FF80033F42E /* MealTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTimeViewController.h; sourceTree = "<group>"; };
+		20D0190D22903FF80033F42E /* MealTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealTimeViewController.m; sourceTree = "<group>"; };
+		20D0190F22903FF80033F42E /* MealTimeProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTimeProtocols.h; sourceTree = "<group>"; };
+		20D0191122903FF80033F42E /* MealTimeRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealTimeRouter.m; sourceTree = "<group>"; };
+		20D0191222903FF80033F42E /* MealTimeRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTimeRouter.h; sourceTree = "<group>"; };
 		20E003782280E87E003E6265 /* WorkoutFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutFacade.swift; sourceTree = "<group>"; };
 		20F221A6226C7BD7009D6853 /* CoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataService.h; sourceTree = "<group>"; };
 		20F221A7226C7BD7009D6853 /* CoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataService.m; sourceTree = "<group>"; };
@@ -107,6 +181,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2090009E22847FC700394CFE /* AppTheme */ = {
+			isa = PBXGroup;
+			children = (
+				2090009F22847FD300394CFE /* AppTheme.swift */,
+			);
+			path = AppTheme;
+			sourceTree = "<group>";
+		};
+		209000A1228480D700394CFE /* SwiftExtenstions */ = {
+			isa = PBXGroup;
+			children = (
+				209000A2228480E200394CFE /* UIColor.swift */,
+			);
+			path = SwiftExtenstions;
+			sourceTree = "<group>";
+		};
 		20AD30AA2280BBC70078E8C6 /* HealthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +241,212 @@
 			path = Sleep;
 			sourceTree = "<group>";
 		};
+		20B20620229049030038875A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				20B206212290490C0038875A /* VKAuthScreen */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		20B206212290490C0038875A /* VKAuthScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20B20632229049370038875A /* Assembly */,
+				20B2062C229049370038875A /* Presenter */,
+				20B20635229049370038875A /* Protocols */,
+				20B20637229049370038875A /* Router */,
+				20B2062F229049370038875A /* View */,
+			);
+			path = VKAuthScreen;
+			sourceTree = "<group>";
+		};
+		20B2062C229049370038875A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20B2062D229049370038875A /* VKAuthScreenPresenter.m */,
+				20B2062E229049370038875A /* VKAuthScreenPresenter.h */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		20B2062F229049370038875A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20B20630229049370038875A /* VKAuthScreenViewController.m */,
+				20B20631229049370038875A /* VKAuthScreenViewController.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20B20632229049370038875A /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20B20633229049370038875A /* VKAuthScreenAssembly.h */,
+				20B20634229049370038875A /* VKAuthScreenAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		20B20635229049370038875A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20B20636229049370038875A /* VKAuthScreenProtocols.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		20B20637229049370038875A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20B20638229049370038875A /* VKAuthScreenRouter.m */,
+				20B20639229049370038875A /* VKAuthScreenRouter.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		20B2063E22904CBC0038875A /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				20B2063F22904CC70038875A /* KeychainService */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		20B2063F22904CC70038875A /* KeychainService */ = {
+			isa = PBXGroup;
+			children = (
+				20B2064222904CEA0038875A /* KeychainService.h */,
+				20B2064322904CEA0038875A /* KeychainService.m */,
+			);
+			path = KeychainService;
+			sourceTree = "<group>";
+		};
+		20B2064522905D7D0038875A /* Alertable */ = {
+			isa = PBXGroup;
+			children = (
+				20B2064622905D900038875A /* Alertable.h */,
+				20B2064A22905DEB0038875A /* UIViewController+Alertable.h */,
+				20B2064B22905DEB0038875A /* UIViewController+Alertable.m */,
+			);
+			path = Alertable;
+			sourceTree = "<group>";
+		};
+		20B2064D229073A20038875A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				20B20660229073C30038875A /* Assembly */,
+				20B20658229073C20038875A /* Presenter */,
+				20B2065E229073C30038875A /* Protocols */,
+				20B2065B229073C20038875A /* Router */,
+				20B20663229073C30038875A /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		20B20658229073C20038875A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20B20659229073C20038875A /* ProfilePresenter.h */,
+				20B2065A229073C20038875A /* ProfilePresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		20B2065B229073C20038875A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20B2065C229073C20038875A /* ProfileRouter.h */,
+				20B2065D229073C20038875A /* ProfileRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		20B2065E229073C30038875A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20B2065F229073C30038875A /* ProfileProtocols.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		20B20660229073C30038875A /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20B20661229073C30038875A /* ProfileAssembly.h */,
+				20B20662229073C30038875A /* ProfileAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		20B20663229073C30038875A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20B20664229073C30038875A /* ProfileViewController.h */,
+				20B20665229073C30038875A /* ProfileViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20B2066A22908A5D0038875A /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				20B2066B22908A6E0038875A /* Local */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		20B2066B22908A6E0038875A /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				20B2066C22908A7A0038875A /* LocalNotificationsService.h */,
+				20B2066D22908A7A0038875A /* LocalNotificationsService.m */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		20B2F0D62281BCFD004B3209 /* MealCell */ = {
+			isa = PBXGroup;
+			children = (
+				20B2F0D72281BD1A004B3209 /* MealCell.h */,
+				20B2F0D82281BD1A004B3209 /* MealCell.m */,
+				20B2F0DA2281BD26004B3209 /* MealCellViewModel.h */,
+				20B2F0DB2281BD26004B3209 /* MealCellViewModel.m */,
+			);
+			path = MealCell;
+			sourceTree = "<group>";
+		};
+		20B2F0DD2281C7DA004B3209 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				20B2F0E522845D3C004B3209 /* MainMenuHeader */,
+				20B2F0DE2281C7E3004B3209 /* MealTableViewHeader */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		20B2F0DE2281C7E3004B3209 /* MealTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				20B2F0DF2281C7FD004B3209 /* MealTableViewHeader.h */,
+				20B2F0E02281C7FD004B3209 /* MealTableViewHeader.m */,
+				20B2F0E22281C825004B3209 /* MealTimeViewModel.h */,
+				20B2F0E32281C825004B3209 /* MealTimeViewModel.m */,
+			);
+			path = MealTableViewHeader;
+			sourceTree = "<group>";
+		};
+		20B2F0E522845D3C004B3209 /* MainMenuHeader */ = {
+			isa = PBXGroup;
+			children = (
+				20B2F0E622845D50004B3209 /* MainMenuHeader.h */,
+				20B2F0E722845D50004B3209 /* MainMenuHeader.m */,
+				20B2F0E922845D61004B3209 /* MainMenuHeaderViewModel.h */,
+				20B2F0EA22845D61004B3209 /* MainMenuHeaderViewModel.m */,
+			);
+			path = MainMenuHeader;
+			sourceTree = "<group>";
+		};
 		20C2CABB226C7B2B006EFDCC = {
 			isa = PBXGroup;
 			children = (
@@ -187,9 +483,66 @@
 			path = EatTrainSleepRepeat;
 			sourceTree = "<group>";
 		};
+		20D018FA22903FC60033F42E /* MealTime */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190522903FF80033F42E /* Assembly */,
+				20D0190822903FF80033F42E /* Presenter */,
+				20D0190E22903FF80033F42E /* Protocols */,
+				20D0191022903FF80033F42E /* Router */,
+				20D0190B22903FF80033F42E /* View */,
+			);
+			path = MealTime;
+			sourceTree = "<group>";
+		};
+		20D0190522903FF80033F42E /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190622903FF80033F42E /* MealTimeAssembly.h */,
+				20D0190722903FF80033F42E /* MealTimeAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		20D0190822903FF80033F42E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190922903FF80033F42E /* MealTimePresenter.m */,
+				20D0190A22903FF80033F42E /* MealTimePresenter.h */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		20D0190B22903FF80033F42E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190C22903FF80033F42E /* MealTimeViewController.h */,
+				20D0190D22903FF80033F42E /* MealTimeViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20D0190E22903FF80033F42E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190F22903FF80033F42E /* MealTimeProtocols.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		20D0191022903FF80033F42E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20D0191122903FF80033F42E /* MealTimeRouter.m */,
+				20D0191222903FF80033F42E /* MealTimeRouter.h */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		20F2219B226C7B5B009D6853 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				2090009E22847FC700394CFE /* AppTheme */,
 				20C2CAC7226C7B2B006EFDCC /* AppDelegate.h */,
 				20C2CAC8226C7B2B006EFDCC /* AppDelegate.m */,
 			);
@@ -199,6 +552,8 @@
 		20F2219C226C7B64009D6853 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				20B2064D229073A20038875A /* Profile */,
+				20B20620229049030038875A /* Auth */,
 				20F221DE226C8017009D6853 /* MainMenu */,
 				20F221DD226C8009009D6853 /* SleepModule */,
 				20F221DC226C7FF0009D6853 /* TrainModule */,
@@ -211,6 +566,8 @@
 		20F2219D226C7B6A009D6853 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				20B2064522905D7D0038875A /* Alertable */,
+				209000A1228480D700394CFE /* SwiftExtenstions */,
 				20F22202226C9DE2009D6853 /* Categories */,
 				20F2219F226C7B7C009D6853 /* Views */,
 			);
@@ -230,6 +587,7 @@
 		20F2219F226C7B7C009D6853 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				20B2F0DD2281C7DA004B3209 /* CustomViews */,
 				20F221A1226C7B88009D6853 /* CollectionViewCells */,
 				20F221A0226C7B81009D6853 /* TableViewCells */,
 			);
@@ -239,6 +597,7 @@
 		20F221A0226C7B81009D6853 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				20B2F0D62281BCFD004B3209 /* MealCell */,
 				20F22207226C9F85009D6853 /* MainMenuCell */,
 			);
 			path = TableViewCells;
@@ -262,6 +621,8 @@
 		20F221A3226C7BA3009D6853 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				20B2066A22908A5D0038875A /* Notifications */,
+				20B2063E22904CBC0038875A /* Security */,
 				20AD30B12280DBFD0078E8C6 /* HealthKit */,
 			);
 			path = Internal;
@@ -398,6 +759,7 @@
 		20F221DB226C7FE4009D6853 /* EatModule */ = {
 			isa = PBXGroup;
 			children = (
+				20D018FA22903FC60033F42E /* MealTime */,
 			);
 			path = EatModule;
 			sourceTree = "<group>";
@@ -450,6 +812,8 @@
 			isa = PBXGroup;
 			children = (
 				20F221F0226C8048009D6853 /* MainMenuProtocols.h */,
+				2090009B2284794D00394CFE /* MainMenuDataMediator.h */,
+				2090009C2284794D00394CFE /* MainMenuDataMediator.m */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -655,27 +1019,51 @@
 			files = (
 				20F221B3226C7D9D009D6853 /* MealTime+CoreDataClass.m in Sources */,
 				20F221A8226C7BD7009D6853 /* CoreDataService.m in Sources */,
+				20D0191322903FF80033F42E /* MealTimeAssembly.m in Sources */,
+				20B20666229073C30038875A /* ProfilePresenter.m in Sources */,
 				20F22206226C9E1D009D6853 /* UIView+Constraints.m in Sources */,
 				20C2CAD2226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld in Sources */,
+				20B2063B229049370038875A /* VKAuthScreenViewController.m in Sources */,
+				20B2F0EB22845D61004B3209 /* MainMenuHeaderViewModel.m in Sources */,
 				20F221B5226C7D9D009D6853 /* Meal+CoreDataClass.m in Sources */,
+				2090009D2284794D00394CFE /* MainMenuDataMediator.m in Sources */,
 				20F22201226C96D4009D6853 /* NetworkService.m in Sources */,
+				20B2F0D92281BD1A004B3209 /* MealCell.m in Sources */,
 				20C2CADA226C7B2D006EFDCC /* main.m in Sources */,
 				20F221D9226C7EE5009D6853 /* TabBarPresenter.m in Sources */,
+				209000A3228480E200394CFE /* UIColor.swift in Sources */,
+				20B2063C229049370038875A /* VKAuthScreenAssembly.m in Sources */,
+				20B20667229073C30038875A /* ProfileRouter.m in Sources */,
+				20B2063A229049370038875A /* VKAuthScreenPresenter.m in Sources */,
+				209000A022847FD300394CFE /* AppTheme.swift in Sources */,
 				20C2CAC9226C7B2B006EFDCC /* AppDelegate.m in Sources */,
+				20B20668229073C30038875A /* ProfileAssembly.m in Sources */,
+				20B2F0E12281C7FD004B3209 /* MealTableViewHeader.m in Sources */,
+				20B2F0E822845D50004B3209 /* MainMenuHeader.m in Sources */,
 				20F221F9226C8048009D6853 /* MainMenuRouter.m in Sources */,
+				20B2064C22905DEB0038875A /* UIViewController+Alertable.m in Sources */,
+				20D0191422903FF80033F42E /* MealTimePresenter.m in Sources */,
 				20F221D8226C7EE5009D6853 /* TabBarRouter.m in Sources */,
 				20F221B6226C7D9D009D6853 /* Meal+CoreDataProperties.m in Sources */,
 				20AD30B72280DC6C0078E8C6 /* DietaryFacade.m in Sources */,
 				20F2220D226CA06F009D6853 /* MainMenuCellViewModel.m in Sources */,
+				20B20669229073C30038875A /* ProfileViewController.m in Sources */,
+				20B2F0DC2281BD26004B3209 /* MealCellViewModel.m in Sources */,
+				20D0191522903FF80033F42E /* MealTimeViewController.m in Sources */,
 				20E003792280E87E003E6265 /* WorkoutFacade.swift in Sources */,
+				20B2F0E42281C825004B3209 /* MealTimeViewModel.m in Sources */,
 				20F2220A226C9F99009D6853 /* MainMenuCell.m in Sources */,
 				20F221D7226C7EE5009D6853 /* TabBarViewController.m in Sources */,
+				20B2066E22908A7A0038875A /* LocalNotificationsService.m in Sources */,
 				20F221F7226C8048009D6853 /* MainMenuPresenter.m in Sources */,
+				20D0191622903FF80033F42E /* MealTimeRouter.m in Sources */,
 				20F221FA226C8048009D6853 /* MainMenuViewController.m in Sources */,
+				20B2063D229049370038875A /* VKAuthScreenRouter.m in Sources */,
 				20F221B4226C7D9D009D6853 /* MealTime+CoreDataProperties.m in Sources */,
 				20AD30AD2280BBDA0078E8C6 /* HealthService.m in Sources */,
 				20F221DA226C7EE5009D6853 /* TabBarAssembly.m in Sources */,
 				20F221F8226C8048009D6853 /* MainMenuAssembly.m in Sources */,
+				20B2064422904CEA0038875A /* KeychainService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

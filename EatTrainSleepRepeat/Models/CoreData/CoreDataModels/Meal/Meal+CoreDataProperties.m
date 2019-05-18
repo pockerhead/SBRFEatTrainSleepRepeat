@@ -16,6 +16,7 @@
 }
 
 @dynamic name;
+@dynamic weight;
 @dynamic kkal;
 @dynamic protein;
 @dynamic carbonhydrate;

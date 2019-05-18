@@ -1,9 +1,8 @@
 //
 //  MealTime+CoreDataProperties.m
-//  EatTrainSleepRepeat
+//  
 //
-//  Created by pockerhead on 21/04/2019.
-//  Copyright © 2019 pockerhead. All rights reserved.
+//  Created by pockerhead on 07/05/2019.
 //
 //
 
@@ -15,8 +14,8 @@
 	return [NSFetchRequest fetchRequestWithEntityName:@"MealTime"];
 }
 
-@dynamic name;
 @dynamic mealDescription;
+@dynamic name;
 @dynamic meals;
 
 @end

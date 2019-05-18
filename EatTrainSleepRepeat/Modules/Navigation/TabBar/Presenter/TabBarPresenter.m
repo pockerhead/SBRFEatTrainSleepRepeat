@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 #import "TabBarPresenter.h"
 #import "TabBarProtocols.h"
+#import "KeychainService.h"
 
 @interface TabBarPresenter () <TabBarPresenterInterface>
 @property (strong, nonatomic) NSObject<TabBarWireframeInterface>* router;
@@ -29,7 +30,7 @@
 }
 
 - (void)viewDidAppear {
-    //Default implementation
+    
 }
 
 - (void)viewDidDissappear {
@@ -41,7 +42,8 @@
 }
 
 - (void)viewWillAppear {
-    //Default implementation
+    BOOL auth = ([KeychainService loadObjectForKey:authTokenKey] && [KeychainService loadObjectForKey:userIDKey]);
+    [self.view configureInitialVCs:auth];
 }
 
 - (void)viewWillDissappear {

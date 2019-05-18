@@ -11,6 +11,7 @@
 #import "TabBarViewController.h"
 #import "MainMenuAssembly.h"
 #import <UIKit/UIKit.h>
+#import "ProfileAssembly.h"
 
 @interface TabBarViewController () <TabBarView>
 
@@ -21,23 +22,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureUI];
-    [self configureInitialVCs];
     [self.presenter viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.presenter viewWillAppear];
 }
 
 - (void)configureUI {
     //configure UI
 }
 
-- (void)configureInitialVCs
+- (void)configureInitialVCs:(BOOL)auth
 {
-    UIViewController *mainMenu = [MainMenuAssembly createModule];
-    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:mainMenu];
-    nav1.title = @"Меню";
+    if (auth)
+    {
+        NSMutableArray *arrayOfVCs = [NSMutableArray arrayWithArray:@[]];
+        UIViewController *mainMenu = [MainMenuAssembly createModule];
+        UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:mainMenu];
+        nav1.title = @"Меню";
+        [arrayOfVCs addObject:nav1];
+        UIViewController *profile = [ProfileAssembly createModule];
+        UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:profile];
+        nav2.title = @"Профиль";
+        [arrayOfVCs addObject:nav2];
+
+        [self setViewControllers:arrayOfVCs animated:YES];
+
+        NSUInteger indexOfNav1 = [arrayOfVCs indexOfObject:nav1];
+        self.tabBar.items[indexOfNav1].image = [[UIImage imageNamed: @"Menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.tabBar.items[indexOfNav1].selectedImage = [[UIImage imageNamed: @"Menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        
+        NSUInteger indexOfNav2 = [arrayOfVCs indexOfObject:nav2];
+        self.tabBar.items[indexOfNav2].image = [[UIImage imageNamed: @"Profile"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.tabBar.items[indexOfNav2].selectedImage = [[UIImage imageNamed: @"Profile"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
+    else
+    {
+        UIViewController *mainMenu = [MainMenuAssembly createModule];
+        UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:mainMenu];
+        nav1.title = @"Меню";
+        
+        [self setViewControllers:@[nav1] animated:YES];
+        self.tabBar.items[0].image = [[UIImage imageNamed: @"Menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        self.tabBar.items[0].selectedImage = [[UIImage imageNamed: @"Menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     
-    [self setViewControllers:@[nav1] animated:YES];
-    self.tabBar.items[0].image = [[UIImage imageNamed: @"Menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.tabBar.items[0].selectedImage = [[UIImage imageNamed: @"Menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
+
 
 @end

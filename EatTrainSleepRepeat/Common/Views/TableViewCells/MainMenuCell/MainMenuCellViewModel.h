@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,8 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *subtitle;
-@property (strong, nonatomic) NSData *imageData;
 @property (assign, nonatomic) BOOL needActivity;
+@property (strong, nonatomic) UIColor *color;
+
+- (instancetype)initWithTitle:(NSString *)title subtitle:(NSString *)subtitle needActivity:(BOOL)needActivity color:(UIColor *)color;
 
 @end
 

@@ -2,6 +2,30 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:DietaryValues+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:DietaryValues+CoreDataClass.h">
+   </FileRef>
+   <FileRef
+      location = "group:DietaryValues+CoreDataClass.m">
+   </FileRef>
+   <FileRef
+      location = "group:DietaryValues+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
+      location = "group:EatTrainSleepRepeat/WorkoutValues+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:EatTrainSleepRepeat/WorkoutValues+CoreDataClass.h">
+   </FileRef>
+   <FileRef
+      location = "group:EatTrainSleepRepeat/WorkoutValues+CoreDataClass.m">
+   </FileRef>
+   <FileRef
+      location = "group:EatTrainSleepRepeat/WorkoutValues+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
       location = "group:EatTrainSleepRepeat.xcodeproj">
    </FileRef>
    <FileRef

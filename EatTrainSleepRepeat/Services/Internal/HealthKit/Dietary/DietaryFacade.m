@@ -11,7 +11,7 @@
 
 @implementation DietaryFacade
 
-- (void)requestValuesWithCompletion:(void (^)(void))completion
+- (void)updateValuesWithCompletion:(void (^)(void))completion
 {
     dispatch_group_t group = dispatch_group_create();
     dispatch_group_enter(group);
@@ -25,6 +25,20 @@
     [[HealthService sharedInstance] getDailyValueForQuantityType:HKQuantityTypeIdentifierDietaryProtein completion:^(NSNumber * _Nullable value, NSError * _Nullable error) {
         if (value) {
             self.proteinsValue = value;
+        }
+        dispatch_group_leave(group);
+    }];
+    dispatch_group_enter(group);
+    [[HealthService sharedInstance] getDailyValueForQuantityType:HKQuantityTypeIdentifierDietaryFatTotal completion:^(NSNumber * _Nullable value, NSError * _Nullable error) {
+        if (value) {
+            self.fatsValue = value;
+        }
+        dispatch_group_leave(group);
+    }];
+    dispatch_group_enter(group);
+    [[HealthService sharedInstance] getDailyValueForQuantityType:HKQuantityTypeIdentifierDietaryCarbohydrates completion:^(NSNumber * _Nullable value, NSError * _Nullable error) {
+        if (value) {
+            self.carbonhydratesValue = value;
         }
         dispatch_group_leave(group);
     }];
@@ -43,11 +57,6 @@
     return [NSString stringWithFormat: @"%@ кКал", stringValue];
 }
 
-- (void)requestProteinsValueWithCompletion:(void (^)(NSNumber * _Nullable, NSError * _Nullable))completion
-{
-    
-}
-
 - (NSString *)proteinsStringValue
 {
     NSString *stringValue = @"-";
@@ -56,5 +65,24 @@
     }
     return [NSString stringWithFormat: @"%@ г.", stringValue];
 }
+
+- (NSString *)fatsStringValue
+{
+    NSString *stringValue = @"-";
+    if (self.fatsValue) {
+        stringValue = [NSString stringWithFormat:@"%0.2f", [self.fatsValue floatValue]];
+    }
+    return [NSString stringWithFormat: @"%@ г.", stringValue];
+}
+
+- (NSString *)carbonhydratesStringValue
+{
+    NSString *stringValue = @"-";
+    if (self.carbonhydratesValue) {
+        stringValue = [NSString stringWithFormat:@"%0.2f", [self.carbonhydratesValue floatValue]];
+    }
+    return [NSString stringWithFormat: @"%@ г.", stringValue];
+}
+
 
 @end
