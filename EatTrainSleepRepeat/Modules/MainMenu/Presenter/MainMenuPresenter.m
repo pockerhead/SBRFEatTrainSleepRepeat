@@ -79,7 +79,17 @@
     NSString *token = [KeychainService loadObjectForKey:authTokenKey];
     if (token == nil) {
         [self.router navigateToAuth];
+        return;
     }
+    if (indexPath.section == [self.menuDataSource indexOfObject:self.foodSection])
+    {
+        [self.router navigateToMealTime];
+    }
+    else if (indexPath.section == [self.menuDataSource indexOfObject:self.workoutSection])
+    {
+        NSLog(@"WORKOUTSection");
+    }
+    
     
 }
 

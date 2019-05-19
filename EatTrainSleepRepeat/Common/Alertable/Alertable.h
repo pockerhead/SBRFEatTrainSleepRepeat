@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol Alertable <NSObject>
 
 @required
-- (void)displayAlertWithMessage:(nonnull NSString *)message completion:(void(^)(void))handler;
+- (void)displayAlertWithMessage:(nonnull NSString *)message completion:(nullable void(^)(void))handler;
 
 @optional
 - (void)displayAlertWithMessage:(nullable NSString *)message title:(nullable NSString *)title cancelButtonTitle:(nullable NSString *)cancelButtonTitle okButtonTitle:(nullable NSString *)okButtonTitle okHandler:(void(^)(void))okHandler cancelHandler:(nullable void(^)(void))cancelHandler;

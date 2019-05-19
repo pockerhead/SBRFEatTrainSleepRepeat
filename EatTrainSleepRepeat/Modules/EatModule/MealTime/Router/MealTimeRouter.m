@@ -10,11 +10,18 @@
 
 #import "MealTimeRouter.h"
 #import "MealTimeProtocols.h"
+#import "AddMealAssembly.h"
 
 @implementation MealTimeRouter
 
 - (void)navigateToDismiss { 
     [self.viewController dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void)navigateAddMealWithIndex:(NSUInteger)index
+{
+    UIViewController *addMeal = [AddMealAssembly createModuleWithIndex:index];
+    [self navigateTo:addMeal];
 }
 
 - (void)navigateTo:(UIViewController *)vc {

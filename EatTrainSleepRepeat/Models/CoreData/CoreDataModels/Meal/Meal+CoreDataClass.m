@@ -11,4 +11,16 @@
 
 @implementation Meal
 
+- (MealDTO *)DTO
+{
+    MealDTO *dto = [MealDTO new];
+    dto.name = self.name;
+    dto.kkal = self.kkal;
+    dto.protein = self.protein;
+    dto.fat = self.fat;
+    dto.carbonhydrate = self.carbonhydrate;
+    dto.weight = self.weight;
+    return dto;
+}
+
 @end

@@ -9,10 +9,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "MealDTO.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Meal : NSManagedObject
+
+- (MealDTO *)DTO;
 
 @end
 

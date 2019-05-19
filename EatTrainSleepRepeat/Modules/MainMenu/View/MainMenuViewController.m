@@ -68,10 +68,6 @@
 - (void)setDataSource:(NSArray<MainMenuDataMediator *> *)dataSource
 {
     _dataSource = dataSource;
-//    [self.tableView performBatchUpdates:^{
-//        NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, self->_dataSource.count)];
-//        [self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
-//    } completion:nil];
     [self.tableView reloadData];
 }
 

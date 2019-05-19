@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 //example
 @required - (void)navigateToDismiss;
 - (void)navigateToAuth;
+- (void)navigateToMealTime;
 
 @end
 

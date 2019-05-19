@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="DietaryValues" representedClassName="DietaryValues" syncable="YES" codeGenerationType="class">
+    <entity name="DietaryValues" representedClassName="DietaryValues" syncable="YES">
         <attribute name="callories" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="carbonhydrates" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -16,20 +16,25 @@
         <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="MealTime" representedClassName="MealTime" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="mealDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="meals" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Meal" syncable="YES"/>
+        <attribute name="totalCarbonhydrates" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="totalFats" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="totalKcal" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="totalProtein" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="meals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" syncable="YES"/>
     </entity>
-    <entity name="WorkoutValues" representedClassName="WorkoutValues" syncable="YES" codeGenerationType="class">
+    <entity name="WorkoutValues" representedClassName="WorkoutValues" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="distanceValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="overallEnergyBurnedValue" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="stepsValue" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Meal" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="MealTime" positionX="-54" positionY="27" width="128" height="90"/>
-        <element name="WorkoutValues" positionX="-63" positionY="36" width="128" height="105"/>
-        <element name="DietaryValues" positionX="-54" positionY="45" width="128" height="120"/>
+        <element name="DietaryValues" positionX="13.14453125" positionY="60.40234375" width="128" height="118"/>
+        <element name="Meal" positionX="-179.78515625" positionY="-157.95703125" width="128" height="135"/>
+        <element name="MealTime" positionX="-308.4140625" positionY="23.65234375" width="128" height="163"/>
+        <element name="WorkoutValues" positionX="16.984375" positionY="-103.015625" width="128" height="103"/>
     </elements>
 </model>

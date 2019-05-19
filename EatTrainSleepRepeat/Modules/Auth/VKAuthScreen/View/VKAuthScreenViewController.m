@@ -12,8 +12,10 @@
 #import "UIView+Constraints.h"
 #import <WebKit/WebKit.h>
 #import <UIKit/UIKit.h>
+#import "Alertable.h"
+#import "UIViewController+Alertable.h"
 
-@interface VKAuthScreenViewController () <VKAuthScreenView, WKUIDelegate, WKNavigationDelegate>
+@interface VKAuthScreenViewController () <VKAuthScreenView, WKUIDelegate, WKNavigationDelegate, Alertable>
 
 @property (strong, nonatomic) WKWebView *webView;
 
@@ -73,8 +75,21 @@
 {
     [self.presenter didFinishLoadWithURL:navigationResponse.response.URL];
     NSLog(@"%@", navigationResponse.response.URL.absoluteString);
-    decisionHandler(WKNavigationActionPolicyAllow);
+    decisionHandler(WKNavigationResponsePolicyAllow);
+}
 
+- (void)displayError:(ErrorDTO *)error
+{
+    [self displayAlertWithMessage:error.message completion:^{
+        [self.presenter didSelectDismissButton];
+    }];
+}
+
+- (void)displaySuccesfullText:(NSString *)text
+{
+    [self displayAlertWithMessage:text completion:^{
+        [self.presenter didSelectDismissButton];
+    }];
 }
 
 

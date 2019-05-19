@@ -9,6 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MealTimeDataMediator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,10 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 //example
 @required - (void)navigateToDismiss;
+@required - (void)navigateAddMealWithIndex:(NSUInteger)index;
 
 @end
 
 @protocol MealTimeView <NSObject>
+
+- (void)displayMeals:(NSArray <MealTimeDataMediator *>*)meals;
 
 @end
 

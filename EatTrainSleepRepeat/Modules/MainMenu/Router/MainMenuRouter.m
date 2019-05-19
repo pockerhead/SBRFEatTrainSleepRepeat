@@ -11,6 +11,7 @@
 #import "MainMenuRouter.h"
 #import "MainMenuProtocols.h"
 #import "VKAuthScreenAssembly.h"
+#import "MealTimeAssembly.h"
 
 @implementation MainMenuRouter
 
@@ -22,6 +23,12 @@
     UIViewController *authScreen = [VKAuthScreenAssembly createModule];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:authScreen];
     [self navigateTo:nav];
+}
+
+- (void)navigateToMealTime
+{
+    UIViewController *mealTime = [MealTimeAssembly createModule];
+    [self navigateTo:mealTime];
 }
 
 

@@ -12,9 +12,16 @@
 #import <UIKit/UIKit.h>
 #import "MealTimePresenter.h"
 #import "MealTimeProtocols.h"
+#import "MealsRepository.h"
+#import "MealTimeDTO.h"
+#import "AppNotes.h"
 
 @interface MealTimePresenter () <MealTimePresenterInterface>
 @property (strong, nonatomic) NSObject<MealTimeWireframeInterface>* router;
+@property (strong, nonatomic) NSArray <MealTimeDataMediator *> *mealsDataSource;
+@property (strong, nonatomic) NSArray <MealTimeDTO *> *mealTimes;
+@property (strong, nonatomic) NSDate *startOfSelectedDay;
+
 @end
 
 @implementation MealTimePresenter
@@ -24,6 +31,7 @@
     if (self) {
         self.view = view;
         self.router = router;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveAddMealNotification:) name:appNoteMealDidAdded object:nil];
     }
     return self;
 }
@@ -37,7 +45,10 @@
 }
 
 - (void)viewDidLoad {
-    //Default implementation
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    self.startOfSelectedDay = [calendar startOfDayForDate:[NSDate date]];
+    self.mealsDataSource = [self fillMeals];
+    [self displayMeals];
 }
 
 - (void)viewWillAppear {
@@ -46,6 +57,101 @@
 
 - (void)viewWillDissappear {
     //Default implementation
+}
+
+- (void)displayMeals
+{
+    NSMutableArray *mealsCopies = [NSMutableArray new];
+    for (MealTimeDataMediator *meal in self.mealsDataSource) {
+        [mealsCopies addObject: [meal copy]];
+    }
+    [self.view displayMeals:[mealsCopies copy]];
+}
+
+- (NSArray <MealTimeDataMediator *> *)fillMeals
+{
+    
+    MealsRepository *mealsRepository = [MealsRepository new];
+    NSMutableArray <MealTimeDataMediator *> *meals = [NSMutableArray new];
+    self.mealTimes = [mealsRepository getMealsWithDate:self.startOfSelectedDay];
+    if (self.mealTimes.count == 0)
+    {
+        NSArray <NSString *> *defaultNames = @[@"Завтрак", @"Обед", @"Ужин"];
+        NSMutableArray <MealTimeDTO *> *mealTimesCopy = [self.mealTimes mutableCopy];
+        for (int i = 0; i < defaultNames.count; i++)
+        {
+            MealTimeDTO *mealTime = [MealTimeDTO new];
+            mealTime.name = defaultNames[i];
+            mealTime.totalFats = 0;
+            mealTime.totalKcal = 0;
+            mealTime.totalCarbonhydrates = 0;
+            mealTime.totalProtein = 0;
+            mealTime.meals = @[];
+            mealTime.date = self.startOfSelectedDay;
+            [mealTimesCopy addObject:mealTime];
+        }
+        [mealsRepository saveMeals:[mealTimesCopy copy] atDate:self.startOfSelectedDay];
+        self.mealTimes = [mealTimesCopy copy];
+    }
+    
+    for (MealTimeDTO *mealTime in self.mealTimes) {
+        MealTimeDataMediator *mediator = [MealTimeDataMediator new];
+        
+        MealTableFooterViewModel *footer = [MealTableFooterViewModel new];
+        footer.tapAction = ^{
+            [self.router navigateAddMealWithIndex:[self.mealsDataSource indexOfObject:mediator]];
+        };
+        MealTimeViewModel *header = [MealTimeViewModel new];
+        header.mealTimeName = [NSString stringWithFormat:@"%@ Kcal:%.0f P:%.0f g, F:%.0f g, C:%.0f g.",mealTime.name ,mealTime.totalKcal, mealTime.totalProtein, mealTime.totalFats, mealTime.totalCarbonhydrates];
+        NSMutableArray <MealCellViewModel *> *rows = [NSMutableArray new];
+        for (MealDTO *meal in mealTime.meals) {
+            MealCellViewModel *row = [MealCellViewModel new];
+            row.name = [NSString stringWithFormat:@"%@, %.0f g.", meal.name, meal.weight];
+            row.calloriesTitle = [NSString stringWithFormat:@"P:%.2f g, F:%.2f g, C:%.2f g.", meal.protein, meal.fat, meal.carbonhydrate];
+            [rows addObject:row];
+        }
+        mediator.rows = rows;
+        mediator.storedRows = rows;
+        mediator.isExpanded = YES;
+        header.isExpanded = YES;
+        header.tapAction = ^{
+            MealTimeDataMediator *med = self.mealsDataSource[[self.mealsDataSource indexOfObject:mediator]];
+            if (med.storedRows.count == 0)
+            {
+                return;
+            }
+            med.isExpanded = !med.isExpanded;
+            med.sectionHeader.isExpanded = med.isExpanded;
+            if (med.isExpanded)
+            {
+                med.rows = med.storedRows;
+            }
+            else
+            {
+                med.rows = @[];
+            }
+            [self displayMeals];
+        };
+        mediator.sectionHeader = header;
+        mediator.sectionFooter = footer;
+        [meals addObject:mediator];
+    }
+    
+    return meals;
+}
+
+- (void)didReceiveAddMealNotification:(NSNotification *)notification
+{
+    MealDTO *meal = notification.userInfo[@"meal"];
+    NSUInteger index = [notification.userInfo[@"index"] unsignedIntegerValue];
+    MealTimeDTO *targetMealTime = self.mealTimes[index];
+    NSMutableArray <MealDTO *>*mealsMutable = [targetMealTime.meals mutableCopy];
+    [mealsMutable addObject:meal];
+    targetMealTime.meals = [mealsMutable copy];
+    MealsRepository *repo = [MealsRepository new];
+    [repo saveMeals:self.mealTimes atDate:self.startOfSelectedDay];
+    self.mealsDataSource = [self fillMeals];
+    [self displayMeals];
 }
 
 @end

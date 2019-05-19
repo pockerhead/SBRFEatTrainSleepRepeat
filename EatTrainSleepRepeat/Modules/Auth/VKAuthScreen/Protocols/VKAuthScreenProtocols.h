@@ -9,7 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Alertable.h"
+#import "ErrorDTO.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,9 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@protocol VKAuthScreenView <NSObject, Alertable>
+@protocol VKAuthScreenView <NSObject>
 
 - (void)displayURL:(NSURL *)url;
+- (void)displayError:(nonnull ErrorDTO *)error;
+- (void)displaySuccesfullText:(NSString *)text;
 
 @end
 

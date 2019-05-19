@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MealTimeViewModel.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MealTableViewHeader : UITableViewHeaderFooterView
+
+- (void)configureWithViewModel:(nullable MealTimeViewModel *)viewModel;
 
 @end
 

@@ -59,26 +59,21 @@
         if (token && userID) {
             [KeychainService saveObject:token forKey:authTokenKey];
             [KeychainService saveObject:userID forKey:userIDKey];
-            [self.view displayAlertWithMessage:@"Вы успешно авторизованы!" completion:^{
-                [self.router navigateToDismiss];
-            }];
+            [self.view displaySuccesfullText:@"Вы успешно авторизованы!"];
         } else {
-            [self.view displayAlertWithMessage:@"Произошла ошибка, повторите позже..." completion:^{
-                [self.router navigateToDismiss];
-            }];
+            ErrorDTO *error = [[ErrorDTO alloc] initWithTitle:nil message:@"Произошла ошибка, повторите позже..."];
+            [self.view displayError:error];
         }
         
     } else if ([url.absoluteString containsString:@"error_description"]) {
         NSDictionary *query = [self queryFromURL:url];
         NSString *err = [query objectForKey:@"error_description"];
         if (err) {
-            [self.view displayAlertWithMessage:err completion:^{
-                [self.router navigateToDismiss];
-            }];
+            ErrorDTO *error = [[ErrorDTO alloc] initWithTitle:nil message:err];
+            [self.view displayError:error];
         } else {
-            [self.view displayAlertWithMessage:@"Произошла ошибка, повторите позже..." completion:^{
-                [self.router navigateToDismiss];
-            }];
+            ErrorDTO *error = [[ErrorDTO alloc] initWithTitle:nil message:@"Произошла ошибка, повторите позже..."];
+            [self.view displayError:error];
         }
     }
 }

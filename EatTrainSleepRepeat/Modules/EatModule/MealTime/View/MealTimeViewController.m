@@ -10,8 +10,17 @@
 
 #import "MealTimeViewController.h"
 #import <UIKit/UIKit.h>
+#import "UIView+Constraints.h"
+#import "MealCell.h"
+#import "MealTableViewHeader.h"
+#import "Alertable.h"
+#import "UIViewController+Alertable.h"
+#import "MealTableFooter.h"
 
-@interface MealTimeViewController () <MealTimeView>
+@interface MealTimeViewController () <MealTimeView, UITableViewDelegate, UITableViewDataSource, Alertable>
+
+@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSArray <MealTimeDataMediator *> *dataSource;
 
 @end
 
@@ -24,7 +33,94 @@
 }
 
 - (void)configureUI {
-    //configure UI
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:self.tableView];
+    [self.tableView fillSuperview];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.dataSource = @[];
+    [self.tableView registerClass:[MealCell class] forCellReuseIdentifier:NSStringFromClass([MealCell class])];
+    [self.tableView registerClass:[MealTableViewHeader class] forHeaderFooterViewReuseIdentifier: NSStringFromClass([MealTableViewHeader class])];
+    [self.tableView registerClass:[MealTableFooter class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([MealTableFooter class])];
+}
+
+- (void)displayMeals:(NSArray<MealTimeDataMediator *> *)meals
+{
+    NSMutableArray <NSNumber *> *indexesToReload = [NSMutableArray new];
+    for (int i = 0; i < meals.count; i++) {
+        if (i < self.dataSource.count)
+        {
+            if (meals[i].rows.count != self.dataSource[i].rows.count)
+            {
+                [indexesToReload addObject:@(i)];
+            }
+        }
+        else
+        {
+            [indexesToReload addObject:@(i)];
+        }
+    }
+    self.dataSource = meals;
+    [self.tableView performBatchUpdates:^{
+        for (NSNumber *index in indexesToReload) {
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:[index unsignedIntegerValue]] withRowAnimation:UITableViewRowAnimationFade];
+        }
+    } completion:nil];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.dataSource.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSource[section].rows.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MealCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MealCell class])];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (indexPath.section < self.dataSource.count && indexPath.row < self.dataSource[indexPath.section].rows.count)
+    {
+        MealCellViewModel *viewModel = self.dataSource[indexPath.section].rows[indexPath.row];
+        [cell configureWithViewModel:viewModel];
+    }
+    return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section < self.dataSource.count) {
+        MealTimeViewModel *viewModel = self.dataSource[section].sectionHeader;
+        MealTableViewHeader *header = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([MealTableViewHeader class])];
+        [header configureWithViewModel:viewModel];
+        return header;
+    }
+    return [UIView new];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section < self.dataSource.count) {
+        MealTableFooterViewModel *viewModel = self.dataSource[section].sectionFooter;
+        MealTableFooter *header = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([MealTableFooter class])];
+        [header configureWithViewModel:viewModel];
+        return header;
+    }
+    return [UIView new];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return UITableViewAutomaticDimension;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return UITableViewAutomaticDimension;
 }
 
 @end

@@ -10,11 +10,13 @@
 
 @implementation KeychainService
 
-+ (BOOL)checkOSStatus:(OSStatus)status {
++ (BOOL)checkOSStatus:(OSStatus)status
+{
     return status == noErr;
 }
 
-+ (NSMutableDictionary *)keychainQueryForKey:(NSString *)key {
++ (NSMutableDictionary *)keychainQueryForKey:(NSString *)key
+{
     return [@{(__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword,
               (__bridge id)kSecAttrService : key,
               (__bridge id)kSecAttrAccount : key,
@@ -31,7 +33,8 @@
     return [self checkOSStatus:SecItemAdd((__bridge CFDictionaryRef)keychainQuery, NULL)];
 }
 
-+ (id)loadObjectForKey:(NSString *)key {
++ (id)loadObjectForKey:(NSString *)key
+{
     id object = nil;
     
     NSMutableDictionary *keychainQuery = [self keychainQueryForKey:key];
@@ -43,7 +46,7 @@
     
     if ([self checkOSStatus:SecItemCopyMatching((__bridge CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData)]) {
         @try {
-            __autoreleasing NSError * _Nullable error;
+            __autoreleasing NSError * _Nullable error = nil;
             object = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSObject class] fromData:(__bridge NSData *)keyData error:&error];
         }
         @catch (NSException *exception) {
@@ -60,7 +63,8 @@
     return object;
 }
 
-+ (BOOL)deleteObjectForKey:(NSString *)key {
++ (BOOL)deleteObjectForKey:(NSString *)key
+{
     NSMutableDictionary *keychainQuery = [self keychainQueryForKey:key];
     return [self checkOSStatus:SecItemDelete((__bridge CFDictionaryRef)keychainQuery)];
 }

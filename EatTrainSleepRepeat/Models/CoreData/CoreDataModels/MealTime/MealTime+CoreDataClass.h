@@ -1,20 +1,23 @@
 //
 //  MealTime+CoreDataClass.h
-//  EatTrainSleepRepeat
+//  
 //
-//  Created by pockerhead on 21/04/2019.
-//  Copyright © 2019 pockerhead. All rights reserved.
+//  Created by pockerhead on 19/05/2019.
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "MealTimeDTO.h"
 
-@class NSObject;
+@class Meal;
+@class MealDTO;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MealTime : NSManagedObject
+
+- (MealTimeDTO *)DTO;
 
 @end
 

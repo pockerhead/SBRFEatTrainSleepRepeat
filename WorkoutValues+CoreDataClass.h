@@ -2,7 +2,7 @@
 //  WorkoutValues+CoreDataClass.h
 //  
 //
-//  Created by pockerhead on 18/05/2019.
+//  Created by pockerhead on 19/05/2019.
 //
 //
 

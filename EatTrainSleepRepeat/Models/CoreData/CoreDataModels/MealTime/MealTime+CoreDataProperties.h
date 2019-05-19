@@ -2,12 +2,12 @@
 //  MealTime+CoreDataProperties.h
 //  
 //
-//  Created by pockerhead on 07/05/2019.
+//  Created by pockerhead on 19/05/2019.
 //
 //
 
 #import "MealTime+CoreDataClass.h"
-#import "Meal+CoreDataProperties.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +17,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *mealDescription;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, retain) Meal *meals;
+@property (nonatomic) float totalProtein;
+@property (nullable, nonatomic, copy) NSDate *date;
+@property (nonatomic) float totalCarbonhydrates;
+@property (nonatomic) float totalFats;
+@property (nonatomic) float totalKcal;
+@property (nullable, nonatomic, retain) NSSet<Meal *> *meals;
+
+@end
+
+@interface MealTime (CoreDataGeneratedAccessors)
+
+- (void)addMealsObject:(Meal *)value;
+- (void)removeMealsObject:(Meal *)value;
+- (void)addMeals:(NSSet<Meal *> *)values;
+- (void)removeMeals:(NSSet<Meal *> *)values;
 
 @end
 

@@ -2,7 +2,7 @@
 //  MealTime+CoreDataProperties.m
 //  
 //
-//  Created by pockerhead on 07/05/2019.
+//  Created by pockerhead on 19/05/2019.
 //
 //
 
@@ -16,6 +16,11 @@
 
 @dynamic mealDescription;
 @dynamic name;
+@dynamic totalProtein;
+@dynamic date;
+@dynamic totalCarbonhydrates;
+@dynamic totalFats;
+@dynamic totalKcal;
 @dynamic meals;
 
 @end

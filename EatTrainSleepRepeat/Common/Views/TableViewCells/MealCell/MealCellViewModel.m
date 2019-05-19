@@ -8,6 +8,7 @@
 
 #import "MealCellViewModel.h"
 
+
 @implementation MealCellViewModel
 
 @end

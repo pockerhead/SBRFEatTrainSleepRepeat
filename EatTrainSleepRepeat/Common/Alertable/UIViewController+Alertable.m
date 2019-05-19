@@ -10,10 +10,13 @@
 
 @implementation UIViewController (Alertable)
 
-- (void)displayAlertWithMessage:(nonnull NSString *)message completion:(void(^)(void))handler {
+- (void)displayAlertWithMessage:(nonnull NSString *)message completion:(nullable void(^)(void))handler {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        handler();
+        if (handler)
+        {
+            handler();
+        }
     }];
     [alert addAction:action];
     [self presentViewController:alert animated:YES completion:nil];

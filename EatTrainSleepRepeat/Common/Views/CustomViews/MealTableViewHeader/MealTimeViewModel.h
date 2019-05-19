@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MealTimeViewModel : NSObject
 
 @property (strong, nonatomic) NSString *mealTimeName;
+@property (nonatomic, copy, nullable) void (^tapAction)(void);
 @property (assign, nonatomic) BOOL isExpanded;
 
 @end
