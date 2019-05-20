@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20213B902292A1AE00A29F52 /* DateService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20213B8F2292A1AE00A29F52 /* DateService.m */; };
 		2090009D2284794D00394CFE /* MainMenuDataMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2090009C2284794D00394CFE /* MainMenuDataMediator.m */; };
 		209000A022847FD300394CFE /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090009F22847FD300394CFE /* AppTheme.swift */; };
 		209000A3228480E200394CFE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209000A2228480E200394CFE /* UIColor.swift */; };
@@ -78,6 +79,8 @@
 
 /* Begin PBXFileReference section */
 		0A51F8BC639BBEAA8635F81F /* libPods-EatTrainSleepRepeat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EatTrainSleepRepeat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20213B8E2292A1AE00A29F52 /* DateService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateService.h; sourceTree = "<group>"; };
+		20213B8F2292A1AE00A29F52 /* DateService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateService.m; sourceTree = "<group>"; };
 		2090009B2284794D00394CFE /* MainMenuDataMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuDataMediator.h; sourceTree = "<group>"; };
 		2090009C2284794D00394CFE /* MainMenuDataMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuDataMediator.m; sourceTree = "<group>"; };
 		2090009F22847FD300394CFE /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
@@ -141,7 +144,7 @@
 		20B206C82291F0800038875A /* WorkoutValues+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WorkoutValues+CoreDataClass.h"; sourceTree = "<group>"; };
 		20B206C92291F0800038875A /* DietaryValues+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DietaryValues+CoreDataClass.m"; sourceTree = "<group>"; };
 		20B206CA2291F0800038875A /* DietaryValues+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DietaryValues+CoreDataClass.h"; sourceTree = "<group>"; };
-		20B206D12291F0B30038875A /* DietaryValues+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DietaryValues+CoreDataProperties.h"; path = "EatTrainSleepRepeat/Models/CoreData/CoreDataModels/DietaryValues/DietaryValues+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		20B206D12291F0B30038875A /* DietaryValues+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DietaryValues+CoreDataProperties.h"; path = "EatTrainSleepRepeat/DietaryValues+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
 		20B206D32291F0C90038875A /* MealDTO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealDTO.h; sourceTree = "<group>"; };
 		20B206D42291F0C90038875A /* MealDTO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MealDTO.m; sourceTree = "<group>"; };
 		20B206D72291F0D50038875A /* MealTimeDTO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MealTimeDTO.h; sourceTree = "<group>"; };
@@ -231,337 +234,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2090009E22847FC700394CFE /* AppTheme */ = {
+		20213B5322929A8000A29F52 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2090009F22847FD300394CFE /* AppTheme.swift */,
+				20213B5622929A9400A29F52 /* CoreData */,
 			);
-			path = AppTheme;
+			name = Models;
 			sourceTree = "<group>";
 		};
-		209000A1228480D700394CFE /* SwiftExtenstions */ = {
+		20213B5622929A9400A29F52 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				209000A2228480E200394CFE /* UIColor.swift */,
+				20213B5822929AA600A29F52 /* CoreDataModels */,
+				20213B5722929A9C00A29F52 /* CoreDataDTO's */,
 			);
-			path = SwiftExtenstions;
+			name = CoreData;
 			sourceTree = "<group>";
 		};
-		20AD30AA2280BBC70078E8C6 /* HealthService */ = {
+		20213B5722929A9C00A29F52 /* CoreDataDTO's */ = {
 			isa = PBXGroup;
 			children = (
-				20AD30AB2280BBDA0078E8C6 /* HealthService.h */,
-				20AD30AC2280BBDA0078E8C6 /* HealthService.m */,
+				20213B5A22929ABC00A29F52 /* Meal */,
+				20213B5922929AB600A29F52 /* MealTime */,
 			);
-			path = HealthService;
+			name = "CoreDataDTO's";
 			sourceTree = "<group>";
 		};
-		20AD30B12280DBFD0078E8C6 /* HealthKit */ = {
+		20213B5822929AA600A29F52 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				20AD30B42280DC260078E8C6 /* Sleep */,
-				20AD30B32280DC200078E8C6 /* Workout */,
-				20AD30B22280DC080078E8C6 /* Dietary */,
-				20AD30AA2280BBC70078E8C6 /* HealthService */,
+				20213B5E22929AEE00A29F52 /* WorkoutValues */,
+				20213B5D22929AE700A29F52 /* DietaryValues */,
+				20213B5C22929AE300A29F52 /* MealTime */,
+				20213B5B22929ADD00A29F52 /* Meal */,
 			);
-			path = HealthKit;
+			name = CoreDataModels;
 			sourceTree = "<group>";
 		};
-		20AD30B22280DC080078E8C6 /* Dietary */ = {
+		20213B5922929AB600A29F52 /* MealTime */ = {
 			isa = PBXGroup;
 			children = (
-				20AD30B52280DC6C0078E8C6 /* DietaryFacade.h */,
-				20AD30B62280DC6C0078E8C6 /* DietaryFacade.m */,
+				20B206D72291F0D50038875A /* MealTimeDTO.h */,
+				20B206D82291F0D50038875A /* MealTimeDTO.m */,
 			);
-			path = Dietary;
+			name = MealTime;
 			sourceTree = "<group>";
 		};
-		20AD30B32280DC200078E8C6 /* Workout */ = {
+		20213B5A22929ABC00A29F52 /* Meal */ = {
 			isa = PBXGroup;
 			children = (
-				20E003782280E87E003E6265 /* WorkoutFacade.swift */,
+				20B206D32291F0C90038875A /* MealDTO.h */,
+				20B206D42291F0C90038875A /* MealDTO.m */,
 			);
-			path = Workout;
+			name = Meal;
 			sourceTree = "<group>";
 		};
-		20AD30B42280DC260078E8C6 /* Sleep */ = {
+		20213B5B22929ADD00A29F52 /* Meal */ = {
 			isa = PBXGroup;
 			children = (
+				20F221B0226C7D9D009D6853 /* Meal+CoreDataClass.h */,
+				20F221B1226C7D9D009D6853 /* Meal+CoreDataClass.m */,
+				20F221AF226C7D9D009D6853 /* Meal+CoreDataProperties.h */,
+				20F221B2226C7D9D009D6853 /* Meal+CoreDataProperties.m */,
 			);
-			path = Sleep;
+			name = Meal;
 			sourceTree = "<group>";
 		};
-		20B20620229049030038875A /* Auth */ = {
+		20213B5C22929AE300A29F52 /* MealTime */ = {
 			isa = PBXGroup;
 			children = (
-				20B206212290490C0038875A /* VKAuthScreen */,
+				20B206E02291F4C90038875A /* MealTime+CoreDataClass.h */,
+				20B206E22291F4C90038875A /* MealTime+CoreDataClass.m */,
+				20B206E32291F4CA0038875A /* MealTime+CoreDataProperties.h */,
+				20B206E12291F4C90038875A /* MealTime+CoreDataProperties.m */,
 			);
-			path = Auth;
+			name = MealTime;
 			sourceTree = "<group>";
 		};
-		20B206212290490C0038875A /* VKAuthScreen */ = {
-			isa = PBXGroup;
-			children = (
-				20B20632229049370038875A /* Assembly */,
-				20B2062C229049370038875A /* Presenter */,
-				20B20635229049370038875A /* Protocols */,
-				20B20637229049370038875A /* Router */,
-				20B2062F229049370038875A /* View */,
-			);
-			path = VKAuthScreen;
-			sourceTree = "<group>";
-		};
-		20B2062C229049370038875A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				20B2062D229049370038875A /* VKAuthScreenPresenter.m */,
-				20B2062E229049370038875A /* VKAuthScreenPresenter.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		20B2062F229049370038875A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				20B20630229049370038875A /* VKAuthScreenViewController.m */,
-				20B20631229049370038875A /* VKAuthScreenViewController.h */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		20B20632229049370038875A /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				20B20633229049370038875A /* VKAuthScreenAssembly.h */,
-				20B20634229049370038875A /* VKAuthScreenAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		20B20635229049370038875A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				20B20636229049370038875A /* VKAuthScreenProtocols.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		20B20637229049370038875A /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				20B20638229049370038875A /* VKAuthScreenRouter.m */,
-				20B20639229049370038875A /* VKAuthScreenRouter.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		20B2063E22904CBC0038875A /* Security */ = {
-			isa = PBXGroup;
-			children = (
-				20B2063F22904CC70038875A /* KeychainService */,
-			);
-			path = Security;
-			sourceTree = "<group>";
-		};
-		20B2063F22904CC70038875A /* KeychainService */ = {
-			isa = PBXGroup;
-			children = (
-				20B2064222904CEA0038875A /* KeychainService.h */,
-				20B2064322904CEA0038875A /* KeychainService.m */,
-			);
-			path = KeychainService;
-			sourceTree = "<group>";
-		};
-		20B2064522905D7D0038875A /* Alertable */ = {
-			isa = PBXGroup;
-			children = (
-				20B2064622905D900038875A /* Alertable.h */,
-				20B2064A22905DEB0038875A /* UIViewController+Alertable.h */,
-				20B2064B22905DEB0038875A /* UIViewController+Alertable.m */,
-			);
-			path = Alertable;
-			sourceTree = "<group>";
-		};
-		20B2064D229073A20038875A /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				20B20660229073C30038875A /* Assembly */,
-				20B20658229073C20038875A /* Presenter */,
-				20B2065E229073C30038875A /* Protocols */,
-				20B2065B229073C20038875A /* Router */,
-				20B20663229073C30038875A /* View */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		20B20658229073C20038875A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				20B20659229073C20038875A /* ProfilePresenter.h */,
-				20B2065A229073C20038875A /* ProfilePresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		20B2065B229073C20038875A /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				20B2065C229073C20038875A /* ProfileRouter.h */,
-				20B2065D229073C20038875A /* ProfileRouter.m */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		20B2065E229073C30038875A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				20B2065F229073C30038875A /* ProfileProtocols.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		20B20660229073C30038875A /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				20B20661229073C30038875A /* ProfileAssembly.h */,
-				20B20662229073C30038875A /* ProfileAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		20B20663229073C30038875A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				20B20664229073C30038875A /* ProfileViewController.h */,
-				20B20665229073C30038875A /* ProfileViewController.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		20B2066A22908A5D0038875A /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				20B206E6229203880038875A /* NotificationCenter */,
-				20B2066B22908A6E0038875A /* Local */,
-			);
-			path = Notifications;
-			sourceTree = "<group>";
-		};
-		20B2066B22908A6E0038875A /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				20B2066C22908A7A0038875A /* LocalNotificationsService.h */,
-				20B2066D22908A7A0038875A /* LocalNotificationsService.m */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		20B20672229173980038875A /* ErrorDTO */ = {
-			isa = PBXGroup;
-			children = (
-				20B20673229173AC0038875A /* ErrorDTO.h */,
-				20B20674229173AC0038875A /* ErrorDTO.m */,
-			);
-			path = ErrorDTO;
-			sourceTree = "<group>";
-		};
-		20B2067A229181AE0038875A /* MealTableFooter */ = {
-			isa = PBXGroup;
-			children = (
-				20B2067B229181BB0038875A /* MealTableFooter.h */,
-				20B2067C229181BB0038875A /* MealTableFooter.m */,
-				20B2067E229181C30038875A /* MealTableFooterViewModel.h */,
-				20B2067F229181C30038875A /* MealTableFooterViewModel.m */,
-			);
-			path = MealTableFooter;
-			sourceTree = "<group>";
-		};
-		20B206872291853F0038875A /* AddMeal */ = {
-			isa = PBXGroup;
-			children = (
-				20B206952291855A0038875A /* Assembly */,
-				20B2069D2291855B0038875A /* Presenter */,
-				20B206982291855B0038875A /* Protocols */,
-				20B206922291855A0038875A /* Router */,
-				20B2069A2291855B0038875A /* View */,
-			);
-			path = AddMeal;
-			sourceTree = "<group>";
-		};
-		20B206922291855A0038875A /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				20B206932291855A0038875A /* AddMealRouter.m */,
-				20B206942291855A0038875A /* AddMealRouter.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		20B206952291855A0038875A /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				20B206962291855A0038875A /* AddMealAssembly.h */,
-				20B206972291855A0038875A /* AddMealAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		20B206982291855B0038875A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				20B206992291855B0038875A /* AddMealProtocols.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		20B2069A2291855B0038875A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				20B2069B2291855B0038875A /* AddMealViewController.m */,
-				20B2069C2291855B0038875A /* AddMealViewController.h */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		20B2069D2291855B0038875A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				20B2069E2291855B0038875A /* AddMealPresenter.h */,
-				20B2069F2291855B0038875A /* AddMealPresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		20B206A4229187EF0038875A /* UIView + CornerRadius */ = {
-			isa = PBXGroup;
-			children = (
-				20B206A52291880A0038875A /* UIView+CornerRadius.h */,
-				20B206A62291880A0038875A /* UIView+CornerRadius.m */,
-			);
-			path = "UIView + CornerRadius";
-			sourceTree = "<group>";
-		};
-		20B206A82291EE0C0038875A /* MealsRepository */ = {
-			isa = PBXGroup;
-			children = (
-				20B206A92291EE1F0038875A /* MealsRepository.h */,
-				20B206AA2291EE1F0038875A /* MealsRepository.m */,
-			);
-			path = MealsRepository;
-			sourceTree = "<group>";
-		};
-		20B206CF2291F08A0038875A /* WorkoutValues */ = {
-			isa = PBXGroup;
-			children = (
-				20B206C42291F07F0038875A /* WorkoutValues+CoreDataProperties.h */,
-				20B206C82291F0800038875A /* WorkoutValues+CoreDataClass.h */,
-				20B206C62291F07F0038875A /* WorkoutValues+CoreDataClass.m */,
-				20B206C52291F07F0038875A /* WorkoutValues+CoreDataProperties.m */,
-			);
-			path = WorkoutValues;
-			sourceTree = "<group>";
-		};
-		20B206D02291F0950038875A /* DietaryValues */ = {
+		20213B5D22929AE700A29F52 /* DietaryValues */ = {
 			isa = PBXGroup;
 			children = (
 				20B206CA2291F0800038875A /* DietaryValues+CoreDataClass.h */,
@@ -569,68 +319,277 @@
 				20B206C72291F07F0038875A /* DietaryValues+CoreDataProperties.m */,
 				20B206D12291F0B30038875A /* DietaryValues+CoreDataProperties.h */,
 			);
-			path = DietaryValues;
+			name = DietaryValues;
 			sourceTree = "<group>";
 		};
-		20B206D22291F0BF0038875A /* Meal */ = {
+		20213B5E22929AEE00A29F52 /* WorkoutValues */ = {
 			isa = PBXGroup;
 			children = (
-				20B206D32291F0C90038875A /* MealDTO.h */,
-				20B206D42291F0C90038875A /* MealDTO.m */,
+				20B206C42291F07F0038875A /* WorkoutValues+CoreDataProperties.h */,
+				20B206C82291F0800038875A /* WorkoutValues+CoreDataClass.h */,
+				20B206C62291F07F0038875A /* WorkoutValues+CoreDataClass.m */,
+				20B206C52291F07F0038875A /* WorkoutValues+CoreDataProperties.m */,
 			);
-			path = Meal;
+			name = WorkoutValues;
 			sourceTree = "<group>";
 		};
-		20B206D62291F0CC0038875A /* MealTime */ = {
+		20213B6022929B4600A29F52 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				20B206D72291F0D50038875A /* MealTimeDTO.h */,
-				20B206D82291F0D50038875A /* MealTimeDTO.m */,
+				20213B6622929B7E00A29F52 /* Internal */,
+				20213B6122929B5400A29F52 /* Core */,
 			);
-			path = MealTime;
+			name = Services;
 			sourceTree = "<group>";
 		};
-		20B206E6229203880038875A /* NotificationCenter */ = {
+		20213B6122929B5400A29F52 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				20213B6422929B6000A29F52 /* Internal */,
+				20213B6222929B5600A29F52 /* Network */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		20213B6222929B5600A29F52 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				20213B6322929B5A00A29F52 /* NetworkService */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		20213B6322929B5A00A29F52 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				20F221FF226C96D4009D6853 /* NetworkService.h */,
+				20F22200226C96D4009D6853 /* NetworkService.m */,
+			);
+			name = NetworkService;
+			sourceTree = "<group>";
+		};
+		20213B6422929B6000A29F52 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				20213B6522929B6300A29F52 /* CoreDataService */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		20213B6522929B6300A29F52 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				20F221A6226C7BD7009D6853 /* CoreDataService.h */,
+				20F221A7226C7BD7009D6853 /* CoreDataService.m */,
+			);
+			name = CoreDataService;
+			sourceTree = "<group>";
+		};
+		20213B6622929B7E00A29F52 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				20213B8C2292A19B00A29F52 /* DateService */,
+				20213B6C22929BA700A29F52 /* HealthKit */,
+				20213B6B22929BA200A29F52 /* Security */,
+				20213B6822929B8D00A29F52 /* Notifications */,
+				20213B6722929B8300A29F52 /* MealsRepostitory */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		20213B6722929B8300A29F52 /* MealsRepostitory */ = {
+			isa = PBXGroup;
+			children = (
+				20B206A92291EE1F0038875A /* MealsRepository.h */,
+				20B206AA2291EE1F0038875A /* MealsRepository.m */,
+			);
+			name = MealsRepostitory;
+			sourceTree = "<group>";
+		};
+		20213B6822929B8D00A29F52 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				20213B6A22929B9600A29F52 /* NotificationCenter */,
+				20213B6922929B9100A29F52 /* Local */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		20213B6922929B9100A29F52 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				20B2066C22908A7A0038875A /* LocalNotificationsService.h */,
+				20B2066D22908A7A0038875A /* LocalNotificationsService.m */,
+			);
+			name = Local;
+			sourceTree = "<group>";
+		};
+		20213B6A22929B9600A29F52 /* NotificationCenter */ = {
 			isa = PBXGroup;
 			children = (
 				20B206E8229203C10038875A /* AppNotes.h */,
 			);
-			path = NotificationCenter;
+			name = NotificationCenter;
 			sourceTree = "<group>";
 		};
-		20B2F0D62281BCFD004B3209 /* MealCell */ = {
+		20213B6B22929BA200A29F52 /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				20B2F0D72281BD1A004B3209 /* MealCell.h */,
-				20B2F0D82281BD1A004B3209 /* MealCell.m */,
-				20B2F0DA2281BD26004B3209 /* MealCellViewModel.h */,
-				20B2F0DB2281BD26004B3209 /* MealCellViewModel.m */,
+				20213B6D22929BB800A29F52 /* KeychainService */,
 			);
-			path = MealCell;
+			name = Security;
 			sourceTree = "<group>";
 		};
-		20B2F0DD2281C7DA004B3209 /* CustomViews */ = {
+		20213B6C22929BA700A29F52 /* HealthKit */ = {
 			isa = PBXGroup;
 			children = (
-				20B2067A229181AE0038875A /* MealTableFooter */,
-				20B2F0E522845D3C004B3209 /* MainMenuHeader */,
-				20B2F0DE2281C7E3004B3209 /* MealTableViewHeader */,
+				20213B7122929BCA00A29F52 /* HealthService */,
+				20213B7022929BC800A29F52 /* Dietary */,
+				20213B6F22929BC500A29F52 /* Workout */,
+				20213B6E22929BC200A29F52 /* Sleep */,
 			);
-			path = CustomViews;
+			name = HealthKit;
 			sourceTree = "<group>";
 		};
-		20B2F0DE2281C7E3004B3209 /* MealTableViewHeader */ = {
+		20213B6D22929BB800A29F52 /* KeychainService */ = {
 			isa = PBXGroup;
 			children = (
-				20B2F0DF2281C7FD004B3209 /* MealTableViewHeader.h */,
-				20B2F0E02281C7FD004B3209 /* MealTableViewHeader.m */,
-				20B2F0E22281C825004B3209 /* MealTimeViewModel.h */,
-				20B2F0E32281C825004B3209 /* MealTimeViewModel.m */,
+				20B2064222904CEA0038875A /* KeychainService.h */,
+				20B2064322904CEA0038875A /* KeychainService.m */,
 			);
-			path = MealTableViewHeader;
+			name = KeychainService;
 			sourceTree = "<group>";
 		};
-		20B2F0E522845D3C004B3209 /* MainMenuHeader */ = {
+		20213B6E22929BC200A29F52 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				20E003782280E87E003E6265 /* WorkoutFacade.swift */,
+			);
+			name = Sleep;
+			sourceTree = "<group>";
+		};
+		20213B6F22929BC500A29F52 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Workout;
+			sourceTree = "<group>";
+		};
+		20213B7022929BC800A29F52 /* Dietary */ = {
+			isa = PBXGroup;
+			children = (
+				20AD30B52280DC6C0078E8C6 /* DietaryFacade.h */,
+				20AD30B62280DC6C0078E8C6 /* DietaryFacade.m */,
+			);
+			name = Dietary;
+			sourceTree = "<group>";
+		};
+		20213B7122929BCA00A29F52 /* HealthService */ = {
+			isa = PBXGroup;
+			children = (
+				20AD30AB2280BBDA0078E8C6 /* HealthService.h */,
+				20AD30AC2280BBDA0078E8C6 /* HealthService.m */,
+			);
+			name = HealthService;
+			sourceTree = "<group>";
+		};
+		20213B7322929CF900A29F52 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				20213B7A22929DDD00A29F52 /* Views */,
+				20213B7722929D3200A29F52 /* Categories */,
+				20213B7622929D2200A29F52 /* SwiftExtensions */,
+				20213B7522929D1200A29F52 /* Alertable */,
+				20213B7422929D0600A29F52 /* ErrorDTO */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		20213B7422929D0600A29F52 /* ErrorDTO */ = {
+			isa = PBXGroup;
+			children = (
+				20B20673229173AC0038875A /* ErrorDTO.h */,
+				20B20674229173AC0038875A /* ErrorDTO.m */,
+			);
+			name = ErrorDTO;
+			sourceTree = "<group>";
+		};
+		20213B7522929D1200A29F52 /* Alertable */ = {
+			isa = PBXGroup;
+			children = (
+				20B2064622905D900038875A /* Alertable.h */,
+				20B2064A22905DEB0038875A /* UIViewController+Alertable.h */,
+				20B2064B22905DEB0038875A /* UIViewController+Alertable.m */,
+			);
+			name = Alertable;
+			sourceTree = "<group>";
+		};
+		20213B7622929D2200A29F52 /* SwiftExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				209000A2228480E200394CFE /* UIColor.swift */,
+			);
+			name = SwiftExtensions;
+			sourceTree = "<group>";
+		};
+		20213B7722929D3200A29F52 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				20213B7922929D4700A29F52 /* UIView+Constraints */,
+				20213B7822929D3D00A29F52 /* UIView+CornerRadius */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		20213B7822929D3D00A29F52 /* UIView+CornerRadius */ = {
+			isa = PBXGroup;
+			children = (
+				20B206A52291880A0038875A /* UIView+CornerRadius.h */,
+				20B206A62291880A0038875A /* UIView+CornerRadius.m */,
+			);
+			name = "UIView+CornerRadius";
+			sourceTree = "<group>";
+		};
+		20213B7922929D4700A29F52 /* UIView+Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				20F22204226C9E1D009D6853 /* UIView+Constraints.h */,
+				20F22205226C9E1D009D6853 /* UIView+Constraints.m */,
+			);
+			name = "UIView+Constraints";
+			sourceTree = "<group>";
+		};
+		20213B7A22929DDD00A29F52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20213B7F22929E1F00A29F52 /* TableViewCells */,
+				20213B7B22929DE100A29F52 /* CustomViews */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		20213B7B22929DE100A29F52 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				20213B7E22929DF100A29F52 /* MealTableHeader */,
+				20213B7D22929DEC00A29F52 /* MainMenuHeader */,
+				20213B7C22929DE700A29F52 /* MealTableFooter */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		20213B7C22929DE700A29F52 /* MealTableFooter */ = {
+			isa = PBXGroup;
+			children = (
+				20B2067B229181BB0038875A /* MealTableFooter.h */,
+				20B2067C229181BB0038875A /* MealTableFooter.m */,
+				20B2067E229181C30038875A /* MealTableFooterViewModel.h */,
+				20B2067F229181C30038875A /* MealTableFooterViewModel.m */,
+			);
+			name = MealTableFooter;
+			sourceTree = "<group>";
+		};
+		20213B7D22929DEC00A29F52 /* MainMenuHeader */ = {
 			isa = PBXGroup;
 			children = (
 				20B2F0E622845D50004B3209 /* MainMenuHeader.h */,
@@ -638,7 +597,453 @@
 				20B2F0E922845D61004B3209 /* MainMenuHeaderViewModel.h */,
 				20B2F0EA22845D61004B3209 /* MainMenuHeaderViewModel.m */,
 			);
-			path = MainMenuHeader;
+			name = MainMenuHeader;
+			sourceTree = "<group>";
+		};
+		20213B7E22929DF100A29F52 /* MealTableHeader */ = {
+			isa = PBXGroup;
+			children = (
+				20B2F0DF2281C7FD004B3209 /* MealTableViewHeader.h */,
+				20B2F0E02281C7FD004B3209 /* MealTableViewHeader.m */,
+				20B2F0E22281C825004B3209 /* MealTimeViewModel.h */,
+				20B2F0E32281C825004B3209 /* MealTimeViewModel.m */,
+			);
+			name = MealTableHeader;
+			sourceTree = "<group>";
+		};
+		20213B7F22929E1F00A29F52 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				20213B8122929E2900A29F52 /* MainMenuCell */,
+				20213B8022929E2600A29F52 /* MealCell */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		20213B8022929E2600A29F52 /* MealCell */ = {
+			isa = PBXGroup;
+			children = (
+				20B2F0D72281BD1A004B3209 /* MealCell.h */,
+				20B2F0D82281BD1A004B3209 /* MealCell.m */,
+				20B2F0DA2281BD26004B3209 /* MealCellViewModel.h */,
+				20B2F0DB2281BD26004B3209 /* MealCellViewModel.m */,
+			);
+			name = MealCell;
+			sourceTree = "<group>";
+		};
+		20213B8122929E2900A29F52 /* MainMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				20F22208226C9F99009D6853 /* MainMenuCell.h */,
+				20F22209226C9F99009D6853 /* MainMenuCell.m */,
+				20F2220B226CA06F009D6853 /* MainMenuCellViewModel.h */,
+				20F2220C226CA06F009D6853 /* MainMenuCellViewModel.m */,
+			);
+			name = MainMenuCell;
+			sourceTree = "<group>";
+		};
+		20213B8322929E6300A29F52 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				20C2CAC7226C7B2B006EFDCC /* AppDelegate.h */,
+				20C2CAC8226C7B2B006EFDCC /* AppDelegate.m */,
+				20213B8422929E6800A29F52 /* AppTheme */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		20213B8422929E6800A29F52 /* AppTheme */ = {
+			isa = PBXGroup;
+			children = (
+				2090009F22847FD300394CFE /* AppTheme.swift */,
+			);
+			name = AppTheme;
+			sourceTree = "<group>";
+		};
+		20213B8522929ED500A29F52 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				20213BAC2292A55900A29F52 /* Navigation */,
+				20213B9F2292A4EE00A29F52 /* Eat */,
+				20213B992292A4B500A29F52 /* MainMenu */,
+				20213B912292A48000A29F52 /* Auth */,
+				20213B8622929ED900A29F52 /* Profile */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		20213B8622929ED900A29F52 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				20213B8B22929EED00A29F52 /* View */,
+				20213B8A22929EE800A29F52 /* Router */,
+				20213B8922929EE300A29F52 /* Protocols */,
+				20213B8822929EE000A29F52 /* Presenter */,
+				20213B8722929EDC00A29F52 /* Assembly */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		20213B8722929EDC00A29F52 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20B20661229073C30038875A /* ProfileAssembly.h */,
+				20B20662229073C30038875A /* ProfileAssembly.m */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
+		20213B8822929EE000A29F52 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20B20659229073C20038875A /* ProfilePresenter.h */,
+				20B2065A229073C20038875A /* ProfilePresenter.m */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		20213B8922929EE300A29F52 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20B2065F229073C30038875A /* ProfileProtocols.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		20213B8A22929EE800A29F52 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20B2065C229073C20038875A /* ProfileRouter.h */,
+				20B2065D229073C20038875A /* ProfileRouter.m */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		20213B8B22929EED00A29F52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20B20664229073C30038875A /* ProfileViewController.h */,
+				20B20665229073C30038875A /* ProfileViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		20213B8C2292A19B00A29F52 /* DateService */ = {
+			isa = PBXGroup;
+			children = (
+				20213B8E2292A1AE00A29F52 /* DateService.h */,
+				20213B8F2292A1AE00A29F52 /* DateService.m */,
+			);
+			name = DateService;
+			sourceTree = "<group>";
+		};
+		20213B912292A48000A29F52 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				20213B922292A48500A29F52 /* VKAuthScreen */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
+		20213B922292A48500A29F52 /* VKAuthScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20213B982292A49C00A29F52 /* View */,
+				20213B972292A49900A29F52 /* Protocols */,
+				20213B962292A49600A29F52 /* Presenter */,
+				20213B952292A49300A29F52 /* Router */,
+				20213B932292A48900A29F52 /* Assembly */,
+			);
+			name = VKAuthScreen;
+			sourceTree = "<group>";
+		};
+		20213B932292A48900A29F52 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20B20633229049370038875A /* VKAuthScreenAssembly.h */,
+				20B20634229049370038875A /* VKAuthScreenAssembly.m */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
+		20213B952292A49300A29F52 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20B20638229049370038875A /* VKAuthScreenRouter.m */,
+				20B20639229049370038875A /* VKAuthScreenRouter.h */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		20213B962292A49600A29F52 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20B2062D229049370038875A /* VKAuthScreenPresenter.m */,
+				20B2062E229049370038875A /* VKAuthScreenPresenter.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		20213B972292A49900A29F52 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20B20636229049370038875A /* VKAuthScreenProtocols.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		20213B982292A49C00A29F52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20B20630229049370038875A /* VKAuthScreenViewController.m */,
+				20B20631229049370038875A /* VKAuthScreenViewController.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		20213B992292A4B500A29F52 /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				20213B9E2292A4C900A29F52 /* Router */,
+				20213B9D2292A4C600A29F52 /* View */,
+				20213B9C2292A4C400A29F52 /* Presenter */,
+				20213B9B2292A4C000A29F52 /* Protocols */,
+				20213B9A2292A4BC00A29F52 /* Assembly */,
+			);
+			name = MainMenu;
+			sourceTree = "<group>";
+		};
+		20213B9A2292A4BC00A29F52 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20F221ED226C8048009D6853 /* MainMenuAssembly.h */,
+				20F221EE226C8048009D6853 /* MainMenuAssembly.m */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
+		20213B9B2292A4C000A29F52 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20F221F0226C8048009D6853 /* MainMenuProtocols.h */,
+				2090009B2284794D00394CFE /* MainMenuDataMediator.h */,
+				2090009C2284794D00394CFE /* MainMenuDataMediator.m */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		20213B9C2292A4C400A29F52 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20F221EA226C8048009D6853 /* MainMenuPresenter.m */,
+				20F221EB226C8048009D6853 /* MainMenuPresenter.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		20213B9D2292A4C600A29F52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20F221F5226C8048009D6853 /* MainMenuViewController.h */,
+				20F221F6226C8048009D6853 /* MainMenuViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		20213B9E2292A4C900A29F52 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20F221F2226C8048009D6853 /* MainMenuRouter.m */,
+				20F221F3226C8048009D6853 /* MainMenuRouter.h */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		20213B9F2292A4EE00A29F52 /* Eat */ = {
+			isa = PBXGroup;
+			children = (
+				20213BA12292A4F500A29F52 /* MealTimes */,
+				20213BA02292A4F200A29F52 /* AddMeal */,
+			);
+			name = Eat;
+			sourceTree = "<group>";
+		};
+		20213BA02292A4F200A29F52 /* AddMeal */ = {
+			isa = PBXGroup;
+			children = (
+				20213BA62292A50D00A29F52 /* View */,
+				20213BA52292A50B00A29F52 /* Router */,
+				20213BA42292A50800A29F52 /* Protocols */,
+				20213BA32292A50500A29F52 /* Presenter */,
+				20213BA22292A50100A29F52 /* Assembly */,
+			);
+			name = AddMeal;
+			sourceTree = "<group>";
+		};
+		20213BA12292A4F500A29F52 /* MealTimes */ = {
+			isa = PBXGroup;
+			children = (
+				20213BAB2292A53700A29F52 /* View */,
+				20213BAA2292A53500A29F52 /* Router */,
+				20213BA92292A53200A29F52 /* Protocols */,
+				20213BA82292A53000A29F52 /* Presenter */,
+				20213BA72292A52C00A29F52 /* Assembly */,
+			);
+			name = MealTimes;
+			sourceTree = "<group>";
+		};
+		20213BA22292A50100A29F52 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20B206962291855A0038875A /* AddMealAssembly.h */,
+				20B206972291855A0038875A /* AddMealAssembly.m */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
+		20213BA32292A50500A29F52 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20B2069E2291855B0038875A /* AddMealPresenter.h */,
+				20B2069F2291855B0038875A /* AddMealPresenter.m */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		20213BA42292A50800A29F52 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20B206992291855B0038875A /* AddMealProtocols.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		20213BA52292A50B00A29F52 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20B206932291855A0038875A /* AddMealRouter.m */,
+				20B206942291855A0038875A /* AddMealRouter.h */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		20213BA62292A50D00A29F52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20B2069B2291855B0038875A /* AddMealViewController.m */,
+				20B2069C2291855B0038875A /* AddMealViewController.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		20213BA72292A52C00A29F52 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190622903FF80033F42E /* MealTimeAssembly.h */,
+				20D0190722903FF80033F42E /* MealTimeAssembly.m */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
+		20213BA82292A53000A29F52 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190922903FF80033F42E /* MealTimePresenter.m */,
+				20D0190A22903FF80033F42E /* MealTimePresenter.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		20213BA92292A53200A29F52 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190F22903FF80033F42E /* MealTimeProtocols.h */,
+				20B2066F2291452A0038875A /* MealTimeDataMediator.h */,
+				20B206702291452A0038875A /* MealTimeDataMediator.m */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		20213BAA2292A53500A29F52 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20D0191122903FF80033F42E /* MealTimeRouter.m */,
+				20D0191222903FF80033F42E /* MealTimeRouter.h */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		20213BAB2292A53700A29F52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20D0190C22903FF80033F42E /* MealTimeViewController.h */,
+				20D0190D22903FF80033F42E /* MealTimeViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		20213BAC2292A55900A29F52 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				20213BAD2292A55F00A29F52 /* TabBar */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		20213BAD2292A55F00A29F52 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				20213BB22292A57A00A29F52 /* View */,
+				20213BB12292A57700A29F52 /* Router */,
+				20213BB02292A57300A29F52 /* Protocols */,
+				20213BAF2292A57100A29F52 /* Presenter */,
+				20213BAE2292A56E00A29F52 /* Assembly */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		20213BAE2292A56E00A29F52 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				20F221D2226C7EE5009D6853 /* TabBarAssembly.h */,
+				20F221D3226C7EE5009D6853 /* TabBarAssembly.m */,
+			);
+			name = Assembly;
+			sourceTree = "<group>";
+		};
+		20213BAF2292A57100A29F52 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				20F221CF226C7EE5009D6853 /* TabBarPresenter.m */,
+				20F221D0226C7EE5009D6853 /* TabBarPresenter.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		20213BB02292A57300A29F52 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				20F221D6226C7EE5009D6853 /* TabBarProtocols.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		20213BB12292A57700A29F52 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				20F221CC226C7EE5009D6853 /* TabBarRouter.h */,
+				20F221CD226C7EE5009D6853 /* TabBarRouter.m */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		20213BB22292A57A00A29F52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20F221C9226C7EE5009D6853 /* TabBarViewController.h */,
+				20F221CA226C7EE5009D6853 /* TabBarViewController.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		20C2CABB226C7B2B006EFDCC = {
@@ -662,444 +1067,20 @@
 		20C2CAC6226C7B2B006EFDCC /* EatTrainSleepRepeat */ = {
 			isa = PBXGroup;
 			children = (
+				20213B8522929ED500A29F52 /* Modules */,
+				20213B8322929E6300A29F52 /* Application */,
+				20213B7322929CF900A29F52 /* Common */,
+				20213B6022929B4600A29F52 /* Services */,
+				20213B5322929A8000A29F52 /* Models */,
 				20AD30B02280BBFD0078E8C6 /* EatTrainSleepRepeat.entitlements */,
-				20F221A2226C7B9E009D6853 /* Models */,
-				20F2219E226C7B71009D6853 /* Services */,
-				20F2219D226C7B6A009D6853 /* Common */,
-				20F2219C226C7B64009D6853 /* Modules */,
-				20F2219B226C7B5B009D6853 /* Application */,
 				20C2CAD3226C7B2D006EFDCC /* Assets.xcassets */,
 				20C2CAD5226C7B2D006EFDCC /* LaunchScreen.storyboard */,
 				20C2CAD8226C7B2D006EFDCC /* Info.plist */,
+				20F221BD226C7ECC009D6853 /* EatTrainSleepRepeat-Bridging-Header.h */,
 				20C2CAD9226C7B2D006EFDCC /* main.m */,
 				20C2CAD0226C7B2B006EFDCC /* EatTrainSleepRepeat.xcdatamodeld */,
 			);
 			path = EatTrainSleepRepeat;
-			sourceTree = "<group>";
-		};
-		20D018FA22903FC60033F42E /* MealTime */ = {
-			isa = PBXGroup;
-			children = (
-				20D0190522903FF80033F42E /* Assembly */,
-				20D0190822903FF80033F42E /* Presenter */,
-				20D0190E22903FF80033F42E /* Protocols */,
-				20D0191022903FF80033F42E /* Router */,
-				20D0190B22903FF80033F42E /* View */,
-			);
-			path = MealTime;
-			sourceTree = "<group>";
-		};
-		20D0190522903FF80033F42E /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				20D0190622903FF80033F42E /* MealTimeAssembly.h */,
-				20D0190722903FF80033F42E /* MealTimeAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		20D0190822903FF80033F42E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				20D0190922903FF80033F42E /* MealTimePresenter.m */,
-				20D0190A22903FF80033F42E /* MealTimePresenter.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		20D0190B22903FF80033F42E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				20D0190C22903FF80033F42E /* MealTimeViewController.h */,
-				20D0190D22903FF80033F42E /* MealTimeViewController.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		20D0190E22903FF80033F42E /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				20D0190F22903FF80033F42E /* MealTimeProtocols.h */,
-				20B2066F2291452A0038875A /* MealTimeDataMediator.h */,
-				20B206702291452A0038875A /* MealTimeDataMediator.m */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		20D0191022903FF80033F42E /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				20D0191122903FF80033F42E /* MealTimeRouter.m */,
-				20D0191222903FF80033F42E /* MealTimeRouter.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		20F2219B226C7B5B009D6853 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				2090009E22847FC700394CFE /* AppTheme */,
-				20C2CAC7226C7B2B006EFDCC /* AppDelegate.h */,
-				20C2CAC8226C7B2B006EFDCC /* AppDelegate.m */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		20F2219C226C7B64009D6853 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				20B2064D229073A20038875A /* Profile */,
-				20B20620229049030038875A /* Auth */,
-				20F221DE226C8017009D6853 /* MainMenu */,
-				20F221DD226C8009009D6853 /* SleepModule */,
-				20F221DC226C7FF0009D6853 /* TrainModule */,
-				20F221DB226C7FE4009D6853 /* EatModule */,
-				20F221BB226C7EB3009D6853 /* Navigation */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		20F2219D226C7B6A009D6853 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				20B20672229173980038875A /* ErrorDTO */,
-				20B2064522905D7D0038875A /* Alertable */,
-				209000A1228480D700394CFE /* SwiftExtenstions */,
-				20F22202226C9DE2009D6853 /* Categories */,
-				20F2219F226C7B7C009D6853 /* Views */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		20F2219E226C7B71009D6853 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				20F221FB226C9692009D6853 /* Core */,
-				20F221A4226C7BA9009D6853 /* Network */,
-				20F221A3226C7BA3009D6853 /* Internal */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		20F2219F226C7B7C009D6853 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				20B2F0DD2281C7DA004B3209 /* CustomViews */,
-				20F221A1226C7B88009D6853 /* CollectionViewCells */,
-				20F221A0226C7B81009D6853 /* TableViewCells */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		20F221A0226C7B81009D6853 /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				20B2F0D62281BCFD004B3209 /* MealCell */,
-				20F22207226C9F85009D6853 /* MainMenuCell */,
-			);
-			path = TableViewCells;
-			sourceTree = "<group>";
-		};
-		20F221A1226C7B88009D6853 /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionViewCells;
-			sourceTree = "<group>";
-		};
-		20F221A2226C7B9E009D6853 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				20F221B9226C7DBC009D6853 /* CoreData */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		20F221A3226C7BA3009D6853 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				20B206A82291EE0C0038875A /* MealsRepository */,
-				20B2066A22908A5D0038875A /* Notifications */,
-				20B2063E22904CBC0038875A /* Security */,
-				20AD30B12280DBFD0078E8C6 /* HealthKit */,
-			);
-			path = Internal;
-			sourceTree = "<group>";
-		};
-		20F221A4226C7BA9009D6853 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		20F221A9226C7BDC009D6853 /* CoreDataService */ = {
-			isa = PBXGroup;
-			children = (
-				20F221A6226C7BD7009D6853 /* CoreDataService.h */,
-				20F221A7226C7BD7009D6853 /* CoreDataService.m */,
-			);
-			path = CoreDataService;
-			sourceTree = "<group>";
-		};
-		20F221AA226C7D8A009D6853 /* CoreDataModels */ = {
-			isa = PBXGroup;
-			children = (
-				20B206D02291F0950038875A /* DietaryValues */,
-				20B206CF2291F08A0038875A /* WorkoutValues */,
-				20F221B8226C7DB3009D6853 /* Meal */,
-				20F221B7226C7DA4009D6853 /* MealTime */,
-			);
-			path = CoreDataModels;
-			sourceTree = "<group>";
-		};
-		20F221B7226C7DA4009D6853 /* MealTime */ = {
-			isa = PBXGroup;
-			children = (
-				20B206E02291F4C90038875A /* MealTime+CoreDataClass.h */,
-				20B206E22291F4C90038875A /* MealTime+CoreDataClass.m */,
-				20B206E32291F4CA0038875A /* MealTime+CoreDataProperties.h */,
-				20B206E12291F4C90038875A /* MealTime+CoreDataProperties.m */,
-			);
-			path = MealTime;
-			sourceTree = "<group>";
-		};
-		20F221B8226C7DB3009D6853 /* Meal */ = {
-			isa = PBXGroup;
-			children = (
-				20F221B0226C7D9D009D6853 /* Meal+CoreDataClass.h */,
-				20F221B1226C7D9D009D6853 /* Meal+CoreDataClass.m */,
-				20F221AF226C7D9D009D6853 /* Meal+CoreDataProperties.h */,
-				20F221B2226C7D9D009D6853 /* Meal+CoreDataProperties.m */,
-			);
-			path = Meal;
-			sourceTree = "<group>";
-		};
-		20F221B9226C7DBC009D6853 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				20F221BA226C7DC9009D6853 /* CoreDataDTO's */,
-				20F221AA226C7D8A009D6853 /* CoreDataModels */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		20F221BA226C7DC9009D6853 /* CoreDataDTO's */ = {
-			isa = PBXGroup;
-			children = (
-				20B206D62291F0CC0038875A /* MealTime */,
-				20B206D22291F0BF0038875A /* Meal */,
-			);
-			path = "CoreDataDTO's";
-			sourceTree = "<group>";
-		};
-		20F221BB226C7EB3009D6853 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				20F221BC226C7EB8009D6853 /* TabBar */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		20F221BC226C7EB8009D6853 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				20F221D1226C7EE5009D6853 /* Assembly */,
-				20F221CE226C7EE5009D6853 /* Presenter */,
-				20F221D5226C7EE5009D6853 /* Protocols */,
-				20F221CB226C7EE5009D6853 /* Router */,
-				20F221C8226C7EE5009D6853 /* View */,
-				20F221BD226C7ECC009D6853 /* EatTrainSleepRepeat-Bridging-Header.h */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
-		20F221C8226C7EE5009D6853 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				20F221C9226C7EE5009D6853 /* TabBarViewController.h */,
-				20F221CA226C7EE5009D6853 /* TabBarViewController.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		20F221CB226C7EE5009D6853 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				20F221CC226C7EE5009D6853 /* TabBarRouter.h */,
-				20F221CD226C7EE5009D6853 /* TabBarRouter.m */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		20F221CE226C7EE5009D6853 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				20F221CF226C7EE5009D6853 /* TabBarPresenter.m */,
-				20F221D0226C7EE5009D6853 /* TabBarPresenter.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		20F221D1226C7EE5009D6853 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				20F221D2226C7EE5009D6853 /* TabBarAssembly.h */,
-				20F221D3226C7EE5009D6853 /* TabBarAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		20F221D5226C7EE5009D6853 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				20F221D6226C7EE5009D6853 /* TabBarProtocols.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		20F221DB226C7FE4009D6853 /* EatModule */ = {
-			isa = PBXGroup;
-			children = (
-				20B206872291853F0038875A /* AddMeal */,
-				20D018FA22903FC60033F42E /* MealTime */,
-			);
-			path = EatModule;
-			sourceTree = "<group>";
-		};
-		20F221DC226C7FF0009D6853 /* TrainModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TrainModule;
-			sourceTree = "<group>";
-		};
-		20F221DD226C8009009D6853 /* SleepModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SleepModule;
-			sourceTree = "<group>";
-		};
-		20F221DE226C8017009D6853 /* MainMenu */ = {
-			isa = PBXGroup;
-			children = (
-				20F221EC226C8048009D6853 /* Assembly */,
-				20F221E9226C8048009D6853 /* Presenter */,
-				20F221EF226C8048009D6853 /* Protocols */,
-				20F221F1226C8048009D6853 /* Router */,
-				20F221F4226C8048009D6853 /* View */,
-			);
-			path = MainMenu;
-			sourceTree = "<group>";
-		};
-		20F221E9226C8048009D6853 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				20F221EA226C8048009D6853 /* MainMenuPresenter.m */,
-				20F221EB226C8048009D6853 /* MainMenuPresenter.h */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		20F221EC226C8048009D6853 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				20F221ED226C8048009D6853 /* MainMenuAssembly.h */,
-				20F221EE226C8048009D6853 /* MainMenuAssembly.m */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		20F221EF226C8048009D6853 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				20F221F0226C8048009D6853 /* MainMenuProtocols.h */,
-				2090009B2284794D00394CFE /* MainMenuDataMediator.h */,
-				2090009C2284794D00394CFE /* MainMenuDataMediator.m */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		20F221F1226C8048009D6853 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				20F221F2226C8048009D6853 /* MainMenuRouter.m */,
-				20F221F3226C8048009D6853 /* MainMenuRouter.h */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		20F221F4226C8048009D6853 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				20F221F5226C8048009D6853 /* MainMenuViewController.h */,
-				20F221F6226C8048009D6853 /* MainMenuViewController.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		20F221FB226C9692009D6853 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				20F221FD226C96A5009D6853 /* Network */,
-				20F221FC226C969E009D6853 /* Internal */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		20F221FC226C969E009D6853 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				20F221A9226C7BDC009D6853 /* CoreDataService */,
-			);
-			path = Internal;
-			sourceTree = "<group>";
-		};
-		20F221FD226C96A5009D6853 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				20F221FE226C96B4009D6853 /* NetworkService */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		20F221FE226C96B4009D6853 /* NetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				20F221FF226C96D4009D6853 /* NetworkService.h */,
-				20F22200226C96D4009D6853 /* NetworkService.m */,
-			);
-			path = NetworkService;
-			sourceTree = "<group>";
-		};
-		20F22202226C9DE2009D6853 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				20B206A4229187EF0038875A /* UIView + CornerRadius */,
-				20F22203226C9DE9009D6853 /* UIView + Constraints */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		20F22203226C9DE9009D6853 /* UIView + Constraints */ = {
-			isa = PBXGroup;
-			children = (
-				20F22204226C9E1D009D6853 /* UIView+Constraints.h */,
-				20F22205226C9E1D009D6853 /* UIView+Constraints.m */,
-			);
-			path = "UIView + Constraints";
-			sourceTree = "<group>";
-		};
-		20F22207226C9F85009D6853 /* MainMenuCell */ = {
-			isa = PBXGroup;
-			children = (
-				20F22208226C9F99009D6853 /* MainMenuCell.h */,
-				20F22209226C9F99009D6853 /* MainMenuCell.m */,
-				20F2220B226CA06F009D6853 /* MainMenuCellViewModel.h */,
-				20F2220C226CA06F009D6853 /* MainMenuCellViewModel.m */,
-			);
-			path = MainMenuCell;
 			sourceTree = "<group>";
 		};
 		5A2DE1D9177B6188202E8BB9 /* Frameworks */ = {
@@ -1276,6 +1257,7 @@
 				20B206A02291855B0038875A /* AddMealRouter.m in Sources */,
 				20D0191622903FF80033F42E /* MealTimeRouter.m in Sources */,
 				20F221FA226C8048009D6853 /* MainMenuViewController.m in Sources */,
+				20213B902292A1AE00A29F52 /* DateService.m in Sources */,
 				20B2063D229049370038875A /* VKAuthScreenRouter.m in Sources */,
 				20B20680229181C30038875A /* MealTableFooterViewModel.m in Sources */,
 				20AD30AD2280BBDA0078E8C6 /* HealthService.m in Sources */,
@@ -1429,7 +1411,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pockerhead.EatTrainSleepRepeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "EatTrainSleepRepeat/Modules/Navigation/TabBar/EatTrainSleepRepeat-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EatTrainSleepRepeat/EatTrainSleepRepeat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1452,7 +1434,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pockerhead.EatTrainSleepRepeat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "EatTrainSleepRepeat/Modules/Navigation/TabBar/EatTrainSleepRepeat-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EatTrainSleepRepeat/EatTrainSleepRepeat-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

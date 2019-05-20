@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MealTime+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:MealTime+CoreDataClass.h">
-   </FileRef>
-   <FileRef
-      location = "group:MealTime+CoreDataClass.m">
-   </FileRef>
-   <FileRef
-      location = "group:MealTime+CoreDataProperties.m">
-   </FileRef>
-   <FileRef
       location = "group:EatTrainSleepRepeat.xcodeproj">
    </FileRef>
    <FileRef
