@@ -9,7 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MainMenuCell.h"
+#import "ETSRMainMenuCell.h"
 #import "MainMenuHeader.h"
 #import "MainMenuDataMediator.h"
 

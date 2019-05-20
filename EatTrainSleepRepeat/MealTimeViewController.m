@@ -35,6 +35,12 @@
     [self.presenter viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.prefersLargeTitles = NO;
+}
+
 - (void)configureUI
 {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];

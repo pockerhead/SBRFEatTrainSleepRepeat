@@ -58,6 +58,9 @@
 		20D0191422903FF80033F42E /* MealTimePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0190922903FF80033F42E /* MealTimePresenter.m */; };
 		20D0191522903FF80033F42E /* MealTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0190D22903FF80033F42E /* MealTimeViewController.m */; };
 		20D0191622903FF80033F42E /* MealTimeRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D0191122903FF80033F42E /* MealTimeRouter.m */; };
+		20DD5DAA2292CFB60014A15A /* AddMealDataMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DD5DA92292CFB60014A15A /* AddMealDataMediator.m */; };
+		20DD5DAE2292D1040014A15A /* ETSRTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DD5DAD2292D1040014A15A /* ETSRTextFieldCell.m */; };
+		20DD5DB12292D1400014A15A /* ETSRTextFieldCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DD5DB02292D1400014A15A /* ETSRTextFieldCellViewModel.m */; };
 		20E003792280E87E003E6265 /* WorkoutFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E003782280E87E003E6265 /* WorkoutFacade.swift */; };
 		20F221A8226C7BD7009D6853 /* CoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221A7226C7BD7009D6853 /* CoreDataService.m */; };
 		20F221B5226C7D9D009D6853 /* Meal+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221B1226C7D9D009D6853 /* Meal+CoreDataClass.m */; };
@@ -72,7 +75,7 @@
 		20F221FA226C8048009D6853 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F221F6226C8048009D6853 /* MainMenuViewController.m */; };
 		20F22201226C96D4009D6853 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F22200226C96D4009D6853 /* NetworkService.m */; };
 		20F22206226C9E1D009D6853 /* UIView+Constraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F22205226C9E1D009D6853 /* UIView+Constraints.m */; };
-		20F2220A226C9F99009D6853 /* MainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F22209226C9F99009D6853 /* MainMenuCell.m */; };
+		20F2220A226C9F99009D6853 /* ETSRMainMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F22209226C9F99009D6853 /* ETSRMainMenuCell.m */; };
 		20F2220D226CA06F009D6853 /* MainMenuCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F2220C226CA06F009D6853 /* MainMenuCellViewModel.m */; };
 		AF1E120B67A67FC3596FDC64 /* libPods-EatTrainSleepRepeat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A51F8BC639BBEAA8635F81F /* libPods-EatTrainSleepRepeat.a */; };
 /* End PBXBuildFile section */
@@ -183,6 +186,12 @@
 		20D0190F22903FF80033F42E /* MealTimeProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTimeProtocols.h; sourceTree = "<group>"; };
 		20D0191122903FF80033F42E /* MealTimeRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealTimeRouter.m; sourceTree = "<group>"; };
 		20D0191222903FF80033F42E /* MealTimeRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealTimeRouter.h; sourceTree = "<group>"; };
+		20DD5DA82292CFB60014A15A /* AddMealDataMediator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddMealDataMediator.h; sourceTree = "<group>"; };
+		20DD5DA92292CFB60014A15A /* AddMealDataMediator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMealDataMediator.m; sourceTree = "<group>"; };
+		20DD5DAC2292D1040014A15A /* ETSRTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSRTextFieldCell.h; sourceTree = "<group>"; };
+		20DD5DAD2292D1040014A15A /* ETSRTextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSRTextFieldCell.m; sourceTree = "<group>"; };
+		20DD5DAF2292D1400014A15A /* ETSRTextFieldCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSRTextFieldCellViewModel.h; sourceTree = "<group>"; };
+		20DD5DB02292D1400014A15A /* ETSRTextFieldCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSRTextFieldCellViewModel.m; sourceTree = "<group>"; };
 		20E003782280E87E003E6265 /* WorkoutFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutFacade.swift; sourceTree = "<group>"; };
 		20F221A6226C7BD7009D6853 /* CoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataService.h; sourceTree = "<group>"; };
 		20F221A7226C7BD7009D6853 /* CoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataService.m; sourceTree = "<group>"; };
@@ -213,8 +222,8 @@
 		20F22200226C96D4009D6853 /* NetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
 		20F22204226C9E1D009D6853 /* UIView+Constraints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Constraints.h"; sourceTree = "<group>"; };
 		20F22205226C9E1D009D6853 /* UIView+Constraints.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraints.m"; sourceTree = "<group>"; };
-		20F22208226C9F99009D6853 /* MainMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuCell.h; sourceTree = "<group>"; };
-		20F22209226C9F99009D6853 /* MainMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuCell.m; sourceTree = "<group>"; };
+		20F22208226C9F99009D6853 /* ETSRMainMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSRMainMenuCell.h; sourceTree = "<group>"; };
+		20F22209226C9F99009D6853 /* ETSRMainMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSRMainMenuCell.m; sourceTree = "<group>"; };
 		20F2220B226CA06F009D6853 /* MainMenuCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuCellViewModel.h; sourceTree = "<group>"; };
 		20F2220C226CA06F009D6853 /* MainMenuCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuCellViewModel.m; sourceTree = "<group>"; };
 		748A33E9BB2CCD81F1E45673 /* Pods-EatTrainSleepRepeat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatTrainSleepRepeat.release.xcconfig"; path = "Target Support Files/Pods-EatTrainSleepRepeat/Pods-EatTrainSleepRepeat.release.xcconfig"; sourceTree = "<group>"; };
@@ -614,6 +623,7 @@
 		20213B7F22929E1F00A29F52 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				20DD5DAB2292D0F10014A15A /* TextFieldCell */,
 				20213B8122929E2900A29F52 /* MainMenuCell */,
 				20213B8022929E2600A29F52 /* MealCell */,
 			);
@@ -634,8 +644,8 @@
 		20213B8122929E2900A29F52 /* MainMenuCell */ = {
 			isa = PBXGroup;
 			children = (
-				20F22208226C9F99009D6853 /* MainMenuCell.h */,
-				20F22209226C9F99009D6853 /* MainMenuCell.m */,
+				20F22208226C9F99009D6853 /* ETSRMainMenuCell.h */,
+				20F22209226C9F99009D6853 /* ETSRMainMenuCell.m */,
 				20F2220B226CA06F009D6853 /* MainMenuCellViewModel.h */,
 				20F2220C226CA06F009D6853 /* MainMenuCellViewModel.m */,
 			);
@@ -914,6 +924,8 @@
 			isa = PBXGroup;
 			children = (
 				20B206992291855B0038875A /* AddMealProtocols.h */,
+				20DD5DA82292CFB60014A15A /* AddMealDataMediator.h */,
+				20DD5DA92292CFB60014A15A /* AddMealDataMediator.m */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -1083,6 +1095,17 @@
 			path = EatTrainSleepRepeat;
 			sourceTree = "<group>";
 		};
+		20DD5DAB2292D0F10014A15A /* TextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				20DD5DAC2292D1040014A15A /* ETSRTextFieldCell.h */,
+				20DD5DAD2292D1040014A15A /* ETSRTextFieldCell.m */,
+				20DD5DAF2292D1400014A15A /* ETSRTextFieldCellViewModel.h */,
+				20DD5DB02292D1400014A15A /* ETSRTextFieldCellViewModel.m */,
+			);
+			name = TextFieldCell;
+			sourceTree = "<group>";
+		};
 		5A2DE1D9177B6188202E8BB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1217,6 +1240,7 @@
 				20B2F0EB22845D61004B3209 /* MainMenuHeaderViewModel.m in Sources */,
 				20F221B5226C7D9D009D6853 /* Meal+CoreDataClass.m in Sources */,
 				2090009D2284794D00394CFE /* MainMenuDataMediator.m in Sources */,
+				20DD5DAA2292CFB60014A15A /* AddMealDataMediator.m in Sources */,
 				20F22201226C96D4009D6853 /* NetworkService.m in Sources */,
 				20B2F0D92281BD1A004B3209 /* MealCell.m in Sources */,
 				20C2CADA226C7B2D006EFDCC /* main.m in Sources */,
@@ -1224,6 +1248,7 @@
 				20B206A32291855B0038875A /* AddMealPresenter.m in Sources */,
 				20B206712291452A0038875A /* MealTimeDataMediator.m in Sources */,
 				209000A3228480E200394CFE /* UIColor.swift in Sources */,
+				20DD5DB12292D1400014A15A /* ETSRTextFieldCellViewModel.m in Sources */,
 				20B2063C229049370038875A /* VKAuthScreenAssembly.m in Sources */,
 				20B20667229073C30038875A /* ProfileRouter.m in Sources */,
 				20B2063A229049370038875A /* VKAuthScreenPresenter.m in Sources */,
@@ -1249,11 +1274,12 @@
 				20E003792280E87E003E6265 /* WorkoutFacade.swift in Sources */,
 				20B206A12291855B0038875A /* AddMealAssembly.m in Sources */,
 				20B2F0E42281C825004B3209 /* MealTimeViewModel.m in Sources */,
-				20F2220A226C9F99009D6853 /* MainMenuCell.m in Sources */,
+				20F2220A226C9F99009D6853 /* ETSRMainMenuCell.m in Sources */,
 				20F221D7226C7EE5009D6853 /* TabBarViewController.m in Sources */,
 				20B2066E22908A7A0038875A /* LocalNotificationsService.m in Sources */,
 				20F221F7226C8048009D6853 /* MainMenuPresenter.m in Sources */,
 				20B206AB2291EE1F0038875A /* MealsRepository.m in Sources */,
+				20DD5DAE2292D1040014A15A /* ETSRTextFieldCell.m in Sources */,
 				20B206A02291855B0038875A /* AddMealRouter.m in Sources */,
 				20D0191622903FF80033F42E /* MealTimeRouter.m in Sources */,
 				20F221FA226C8048009D6853 /* MainMenuViewController.m in Sources */,

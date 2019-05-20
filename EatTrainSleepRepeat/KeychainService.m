@@ -28,7 +28,7 @@
     NSMutableDictionary *keychainQuery = [self keychainQueryForKey:key];
     [self deleteObjectForKey:key];
     NSError *error = nil;
-    [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:object requiringSecureCoding:true error:&error] forKey:(__bridge id)kSecValueData];
+    [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:object requiringSecureCoding:YES error:&error] forKey:(__bridge id)kSecValueData];
     return [self checkOSStatus:SecItemAdd((__bridge CFDictionaryRef)keychainQuery, NULL)];
 }
 

@@ -11,11 +11,14 @@
 #import "AddMealViewController.h"
 #import <UIKit/UIKit.h>
 #import "UIView+Constraints.h"
+#import "ETSRTextFieldCell.h"
 
 
-@interface AddMealViewController () <AddMealView>
+@interface AddMealViewController () <AddMealView, UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSArray <AddMealDataMediator *> *dataSource;
+@property (assign, nonatomic) NSUInteger selectedIndex;
 
 @end
 
@@ -29,17 +32,44 @@
     [self.presenter viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.prefersLargeTitles = NO;
+}
+
 - (void)configureUI
 {
-    UIButton *button = [UIButton new];
-    [self.view addSubview:button];
-    self.view.backgroundColor = UIColor.whiteColor;
-    [button fillSuperview];
-    [button setTitle:@"ДОБАВИТЬ ГРУДКУ" forState:UIControlStateNormal];
-    [button setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:30];
-    button.titleLabel.numberOfLines = 0;
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    [self.view addSubview:self.tableView];
+    [self.tableView fillSuperview];
+    [self.tableView registerClass:[ETSRTextFieldCell class] forCellReuseIdentifier:NSStringFromClass([ETSRTextFieldCell class])];
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
+    self.tableView.delegate = self;
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    self.tableView.dataSource = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidAppear:) name:UIKeyboardDidShowNotification object:nil];
+
+}
+
+- (void)displayData:(NSArray<AddMealDataMediator *> *)data
+{
+    self.dataSource = data;
+    [self.tableView reloadData];
+}
+
+- (void)displayReadyToSave
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button addTarget:self action:@selector(didSelectAddChickenButton) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"Готово" forState:UIControlStateNormal];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = barButton;
+}
+
+- (void)displayNotReadyToSave
+{
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)didSelectAddChickenButton
@@ -52,8 +82,75 @@
     [self.presenter didSelectDismissButton];
 }
 
-- (void)dealloc
+// MARK: - Keyboard Handle
+
+- (void)keyboardDidAppear:(NSNotification *)notification
 {
-    NSLog(@"DEALLOC");
+    NSDictionary *keyboardInfo = [notification userInfo];
+    NSValue *keyboardFrameEnd = [keyboardInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardFrameEndRect = [keyboardFrameEnd CGRectValue];
+    NSIndexPath *selectedCellIndexPath = [NSIndexPath indexPathForRow:0 inSection:self.selectedIndex];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedCellIndexPath];
+    CGRect absoluteCellFrame = [self.view convertRect:cell.frame toView:self.view];
+    CGRect absoluteKeyBoardFrame = [self.view convertRect:keyboardFrameEndRect toView:self.view];
+    CGFloat diff = CGRectGetMinY(absoluteKeyBoardFrame) - CGRectGetMinY(absoluteCellFrame) + self.tableView.contentOffset.y;
+    if (diff < CGRectGetHeight(cell.frame))
+    {
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y + -diff + CGRectGetHeight(cell.frame) + 16)];
+        }];
+    }
 }
+
+// MARK: - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    self.selectedIndex = indexPath.section;
+    ETSRTextFieldCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [cell editTextfield];
+}
+
+// MARK: - UITableViewDataSource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ETSRTextFieldCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ETSRTextFieldCell class])];
+    if (cell)
+    {
+        AddMealDataMediator *mediator = self.dataSource[indexPath.section];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        ETSRTextFieldCellViewModel *viewModel = [ETSRTextFieldCellViewModel new];
+        viewModel.text = mediator.text;
+        viewModel.placeholder = mediator.placeholder;
+        viewModel.keyboardType = mediator.keyboardType;
+        __weak typeof(self) weakSelf = self;
+        viewModel.textDidEntered = ^(NSString * _Nullable text) {
+            [weakSelf.presenter didEnterTextAtIndexPath:indexPath text:text];
+            self.dataSource[indexPath.section].text = text;
+        };
+        [cell configureWithViewModel:viewModel];
+        return cell;
+    }
+    return [UITableViewCell new];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.dataSource[section].headerTitle;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.dataSource.count;
+}
+
+
+
 @end

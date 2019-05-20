@@ -31,12 +31,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self.presenter viewWillAppear];
 }
 
 - (void)configureUI {
     self.navigationItem.title = @"Сегодня";
-    self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self configureTableView];
 }
 
@@ -50,13 +50,13 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
     self.tableView.dataSource = self;
-    [self.tableView registerClass:[MainMenuCell class] forCellReuseIdentifier:NSStringFromClass([MainMenuCell class])];
+    [self.tableView registerClass:[ETSRMainMenuCell class] forCellReuseIdentifier:NSStringFromClass([ETSRMainMenuCell class])];
     [self.tableView registerClass:[MainMenuHeader class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([MainMenuHeader class])];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MainMenuCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MainMenuCell class])];
+    ETSRMainMenuCell *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ETSRMainMenuCell class])];
     if (indexPath.section < self.dataSource.count && indexPath.row < self.dataSource[indexPath.section].rows.count)
     {
         MainMenuCellViewModel *viewModel = self.dataSource[indexPath.section].rows[indexPath.row];

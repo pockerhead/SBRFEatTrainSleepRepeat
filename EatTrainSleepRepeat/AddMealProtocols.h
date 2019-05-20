@@ -9,6 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AddMealDataMediator.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,11 +18,17 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AddMealWireframeInterface <NSObject>
 
 //example
-@required - (void)navigateToDismiss;
+@required
+- (void)navigateToDismiss;
+- (void)navigateToPop;
 
 @end
 
 @protocol AddMealView <NSObject>
+
+- (void)displayReadyToSave;
+- (void)displayNotReadyToSave;
+- (void)displayData:(NSArray <AddMealDataMediator *>*)data;
 
 @end
 
@@ -35,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)didSelectFinishButton;
 - (void)didSelectDismissButton;
+- (void)didEnterTextAtIndexPath:(NSIndexPath *)indexPath text:(NSString *)text;
 
 @end
 

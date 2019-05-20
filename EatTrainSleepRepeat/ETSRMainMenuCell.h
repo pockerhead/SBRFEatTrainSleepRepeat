@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainMenuCell : UITableViewCell
+@interface ETSRMainMenuCell : UITableViewCell
 
 - (void)configureWithViewModel:(MainMenuCellViewModel *)viewModel;
 

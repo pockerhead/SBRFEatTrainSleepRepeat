@@ -14,17 +14,17 @@
 @implementation VKAuthScreenRouter
 
 - (void)navigateToDismiss { 
-    [self.viewController dismissViewControllerAnimated:true completion:nil];
+    [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)navigateTo:(UIViewController *)vc {
     if([vc isKindOfClass:[UINavigationController class]]){
-        [self.viewController presentViewController:vc animated:true completion:nil];
+        [self.viewController presentViewController:vc animated:YES completion:nil];
     } else if ([vc isKindOfClass:[UIViewController class]]) {
         if (self.viewController.navigationController){
-            [self.viewController.navigationController pushViewController:vc animated:true];
+            [self.viewController.navigationController pushViewController:vc animated:YES];
         } else {
-            [self.viewController presentViewController:vc animated:true completion:nil];
+            [self.viewController presentViewController:vc animated:YES completion:nil];
         }
     }
 }

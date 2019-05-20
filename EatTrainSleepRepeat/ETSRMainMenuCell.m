@@ -6,11 +6,11 @@
 //  Copyright © 2019 pockerhead. All rights reserved.
 //
 
-#import "MainMenuCell.h"
+#import "ETSRMainMenuCell.h"
 #import "UIView+Constraints.h"
 #import <Masonry.h>
 
-@interface MainMenuCell ()
+@interface ETSRMainMenuCell ()
 
 @property (strong, nonatomic) UITextView *title;
 @property (strong, nonatomic) UILabel *subtitle;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation MainMenuCell
+@implementation ETSRMainMenuCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

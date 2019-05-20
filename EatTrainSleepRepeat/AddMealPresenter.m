@@ -17,8 +17,10 @@
 
 
 @interface AddMealPresenter () <AddMealPresenterInterface>
+
 @property (strong, nonatomic) NSObject<AddMealWireframeInterface>* router;
 @property (assign, nonatomic) NSUInteger index;
+@property (strong, nonatomic) NSArray <AddMealDataMediator *> *textRows;
 @end
 
 
@@ -47,6 +49,8 @@
 
 - (void)viewDidLoad
 {
+    self.textRows = [self initialRows];
+    [self.view displayData:self.textRows];
 }
 
 - (void)viewWillAppear
@@ -61,23 +65,91 @@
 
 - (void)didSelectFinishButton
 {
-    MealDTO *meal = [MealDTO new];
-    meal.name = @"Грудка";
-    meal.fat = 20;
-    meal.carbonhydrate = 20;
-    meal.protein = 20;
-    meal.weight = 230;
-    meal.kkal = 330;
-    if ([self allFieldIsValid]) //validate fields
+    
+    if ([self allFieldIsValid] == NO) //validate fields
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:appNoteMealDidAdded object:nil userInfo:@{@"meal": meal, @"index":@(self.index)}];
-//        [self.router navigateToDismiss];
+        return;
+    }
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    
+    MealDTO *meal = [MealDTO new];
+    meal.name = self.textRows[0].text;
+    
+    NSNumber *weightNumber = [f numberFromString:self.textRows[1].text];
+    meal.weight = [weightNumber floatValue];
+    
+    NSNumber *kkalNumber = [f numberFromString:self.textRows[2].text];
+    meal.kkal = [kkalNumber floatValue];
+    
+    NSNumber *proteinNumber = [f numberFromString:self.textRows[3].text];
+    meal.protein = [proteinNumber floatValue];
+    
+    NSNumber *fatNumber = [f numberFromString:self.textRows[4].text];
+    meal.fat = [fatNumber floatValue];
+    
+    NSNumber *carbonhydrateNumber = [f numberFromString:self.textRows[5].text];
+    meal.carbonhydrate = [carbonhydrateNumber floatValue];
+    [[NSNotificationCenter defaultCenter] postNotificationName:appNoteMealDidAdded object:nil userInfo:@{@"meal": meal, @"index":@(self.index)}];
+    [self.router navigateToPop];
+    
+}
+
+- (NSMutableArray <AddMealDataMediator *> *)initialRows
+{
+    NSArray <NSString *>*placeholders = @[
+                                          @"Название",
+                                          @"Вес",
+                                          @"Калорийность",
+                                          @"Белки",
+                                          @"Жиры",
+                                          @"Углеводы"
+                                          ];
+    NSArray <NSNumber *> *keyboardTypes = @[
+                                            @(UIKeyboardTypeDefault),
+                                            @(UIKeyboardTypeDecimalPad),
+                                            @(UIKeyboardTypeDecimalPad),
+                                            @(UIKeyboardTypeDecimalPad),
+                                            @(UIKeyboardTypeDecimalPad),
+                                            @(UIKeyboardTypeDecimalPad),
+                                            ];
+    NSMutableArray <AddMealDataMediator *> *rows = [NSMutableArray new];
+    for (int i = 0; i < placeholders.count; i++)
+    {
+        AddMealDataMediator *row = [AddMealDataMediator new];
+        row.text = @"";
+        row.keyboardType = [keyboardTypes[i] unsignedIntegerValue];
+        row.placeholder = placeholders[i];
+        row.headerTitle = placeholders[i];
+        [rows addObject:row];
+    }
+    return rows;
+}
+
+- (void)didEnterTextAtIndexPath:(NSIndexPath *)indexPath text:(NSString *)text
+{
+    self.textRows[indexPath.section].text = text;
+    if ([self allFieldIsValid])
+    {
+        [self.view displayReadyToSave];
+    }
+    else
+    {
+        [self.view displayNotReadyToSave];
     }
 }
 
 - (BOOL)allFieldIsValid
 {
-    return true; //validate
+    BOOL isValid = YES;
+    for (AddMealDataMediator *row in self.textRows)
+    {
+        if (!row.text || [row.text isEqualToString:@""])
+        {
+            isValid = NO;
+        }
+    }
+    return isValid; //validate
 }
 
 - (void)didSelectDismissButton

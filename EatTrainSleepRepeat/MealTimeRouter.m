@@ -17,7 +17,7 @@
 
 - (void)navigateToDismiss
 {
-    [self.viewController dismissViewControllerAnimated:true completion:nil];
+    [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)navigateToAddMealWithIndex:(NSUInteger)index
@@ -29,12 +29,12 @@
 - (void)navigateTo:(UIViewController *)viewController
 {
     if([viewController isKindOfClass:[UINavigationController class]]){
-        [self.viewController presentViewController:viewController animated:true completion:nil];
+        [self.viewController presentViewController:viewController animated:YES completion:nil];
     } else if ([viewController isKindOfClass:[UIViewController class]]) {
         if (self.viewController.navigationController){
-            [self.viewController.navigationController pushViewController:viewController animated:true];
+            [self.viewController.navigationController pushViewController:viewController animated:YES];
         } else {
-            [self.viewController presentViewController:viewController animated:true completion:nil];
+            [self.viewController presentViewController:viewController animated:YES completion:nil];
         }
     }
 }
